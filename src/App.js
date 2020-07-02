@@ -22,10 +22,10 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        Welcome To Mike's Betting Site!
         <Provider store={myStore}>
           <UpcomingGamesContainer />
         </Provider>
-        Welcome To Mike's Betting Site!
       </div>
     );
   }

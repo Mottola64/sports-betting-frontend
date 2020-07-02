@@ -1,7 +1,8 @@
 import React from "react";
-import UpcomingGames from '../components/UpcomingGames'
+import UpcomingGames from "../components/UpcomingGames";
 import { connect } from "react-redux";
-import {fetchUpcomingGames} from '../actions/fetchUpcomingGames'
+import { fetchUpcomingGames } from "../actions/fetchUpcomingGames";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 class UpcomingGamesContainer extends React.Component {
   componentDidMount() {
@@ -9,20 +10,31 @@ class UpcomingGamesContainer extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-        {this.props.upcoming.length > 0 && (
-      <UpcomingGames upcoming={this.props.upcoming}/>
-        )}
-      </div>
-    );
+    if (this.props.upcoming.length === 0) {
+      return (
+        <div
+          className="justify-content-center d-flex"
+          style={{ backgroundColor: "white" }}
+        >
+          <LoadingSpinner />
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <UpcomingGames upcoming={this.props.upcoming.data} />
+        </div>
+      );
+    }
   }
 }
 
 const mapStateToProps = (state) => {
-    return {
-      upcoming: state.upcoming,
-    };
+  return {
+    upcoming: state.upcoming,
   };
+};
 
-export default connect(mapStateToProps, { fetchUpcomingGames })(UpcomingGamesContainer);
+export default connect(mapStateToProps, { fetchUpcomingGames })(
+  UpcomingGamesContainer
+);

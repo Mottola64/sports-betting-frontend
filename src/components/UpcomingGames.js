@@ -12,29 +12,36 @@ import {
 } from "reactstrap";
 
 class UpcomingGames extends React.Component {
-  render() {
+//   let odds = {upcomingGame.sites.map((site) => {
+//       site.
+//   })}
+//   convertOdds = (odds) => {
+//       if(odds >= 2.00){
+//           americanOdds = (({upcomingGame.sites.odds}-1)*100)
+//       } else
+//   { americanOdds = ((-100)/({upcomingGame.sites.odds}-1))}
+
+    render() {
     return (
       <div>
         <CardColumns>
-          {this.state.upcoming.map((upcomingGame) => {
-            const { id, upcoming } = upcomingGame;
+          {this.props.upcoming.map((upcomingGame) => {
+            
             return (
-              <Card key={upcoming.id}>
+              <Card key={upcomingGame.home_team}>
                 <CardBody>
                   <CardHeader className="text-center" width="100%">
-                    <strong>{upcoming.sport_nice}</strong>
+                    <strong>{upcomingGame.sport_nice}</strong>
                   </CardHeader>
                   <br></br>
-            <CardSubtitle>{upcoming.teams[1]} vs. {upcoming.teams[0]}</CardSubtitle>
+            <CardSubtitle>{upcomingGame.teams[1]} vs. {upcomingGame.teams[0]}</CardSubtitle>
 
                   <br></br>
-                  <CardText>Year: {upcomingGame.year_id}</CardText>
-                  <CardText>Pts: {upcomingGame.points}</CardText>
-                  <CardText>Onbase: {upcomingGame.onbase}</CardText>
-                  <CardText>
-                    Position: {upcomingGame.starting_position}+
-                    {upcomingGame.fielding_one}
-                  </CardText>
+                  <CardText>{upcomingGame.commence_time}</CardText>
+            <CardSubtitle>{upcomingGame.teams[1]}: {upcomingGame.sites.map((site) => {
+                return(<CardText key={site.site_nice}>{site.site_nice}</CardText>)})}
+            </CardSubtitle>
+                 
                 </CardBody>
               </Card>
             );
