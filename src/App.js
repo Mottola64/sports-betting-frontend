@@ -1,13 +1,28 @@
 import React from "react";
-import UpcomingGames from './containers/UpcomingGames'
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware, compose, combineReducers } from "redux";
+import logger from "redux-logger";
+import UpcomingGames from "./containers/UpcomingGames";
 import "./App.css";
 
-console.log(process.env.REACT_APP_API_KEY);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-function App() {
-  return <div className="App">Welcome To Mike's Betting Site!
-  <UpcomingGames />
-  </div>;
+let myStore = createStore(
+  reducer,
+  composeEnhancers(applyMiddleware(thunk, logger))
+);
+
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <Provider store={myStore}>
+          <UpcomingGames />
+        </Provider>
+        Welcome To Mike's Betting Site!
+      </div>
+    );
+  }
 }
 
 export default App;
