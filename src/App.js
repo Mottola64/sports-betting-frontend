@@ -1,9 +1,15 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose, combineReducers } from "redux";
+import thunk from "redux-thunk";
 import logger from "redux-logger";
-import UpcomingGames from "./containers/UpcomingGames";
+import UpcomingGamesContainer from "./containers/UpcomingGamesContainer";
+import upcoming from "./reducers/upcoming";
 import "./App.css";
+
+const reducer = combineReducers({
+  upcoming,
+});
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -17,7 +23,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Provider store={myStore}>
-          <UpcomingGames />
+          <UpcomingGamesContainer />
         </Provider>
         Welcome To Mike's Betting Site!
       </div>
