@@ -1,5 +1,5 @@
 import React from "react";
-// import UpcomingGame from "./UpcomingGame";
+// import sport from "./sport";
 import {
   Card,
   Button,
@@ -11,28 +11,28 @@ import {
   CardBody,
 } from "reactstrap";
 
-class UpcomingGames extends React.Component {
+class Sports extends React.Component {
   render() {
     return (
       <div>
         <CardColumns>
-          {this.props.upcoming.map((upcomingGame) => {
+          {this.props.sports.map((sport) => {
             return (
-              <Card key={upcomingGame.home_team}>
+              <Card key={sport.payload}>
                 <CardBody>
                   <CardHeader className="text-center" width="100%">
-                    <strong>{upcomingGame.sport_nice}</strong>
+                    <strong>{sport.sport_nice}</strong>
                   </CardHeader>
                   <br></br>
                   <CardSubtitle>
-                    {upcomingGame.teams[1]} vs. {upcomingGame.teams[0]}
+                    {sport.teams[1]} vs. {sport.teams[0]}
                   </CardSubtitle>
 
                   <br></br>
-                  <CardText>{upcomingGame.commence_time}</CardText>
+                  <CardText>{sport.commence_time}</CardText>
                   <CardSubtitle>
-                    {upcomingGame.teams[1]}:{" "}
-                    {upcomingGame.sites.map((site) => {
+                    {sport.teams[1]}:{" "}
+                    {sport.sites.map((site) => {
                       return (
                         <CardText key={site.site_nice}>
                           {site.site_nice}
@@ -55,4 +55,4 @@ class UpcomingGames extends React.Component {
   }
 }
 
-export default UpcomingGames;
+export default Sports;
