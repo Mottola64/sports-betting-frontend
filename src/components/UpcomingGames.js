@@ -13,6 +13,31 @@ import {
 
 class UpcomingGames extends React.Component {
   render() {
+    function convertTimestamp(timestamp) {
+      var d = new Date(timestamp * 1000),
+        mm = ("0" + (d.getMonth() + 1)).slice(-2),
+        dd = ("0" + d.getDate()).slice(-2),
+        hh = d.getHours(),
+        h = hh,
+        min = ("0" + d.getMinutes()).slice(-2),
+        ampm = "AM",
+        time;
+
+      if (hh > 12) {
+        h = hh - 12;
+        ampm = "PM";
+      } else if (hh === 12) {
+        h = 12;
+        ampm = "PM";
+      } else if (hh === 0) {
+        h = 12;
+      }
+
+      time = mm + "-" + dd + ", " + h + ":" + min + " " + ampm;
+
+      return time;
+    }
+
     return (
       <div>
         <CardColumns>
@@ -29,7 +54,9 @@ class UpcomingGames extends React.Component {
                   </CardSubtitle>
 
                   <br></br>
-                  <CardText>{upcomingGame.commence_time}</CardText>
+                  <CardText>
+                    {convertTimestamp(upcomingGame.commence_time)}
+                  </CardText>
                   <CardSubtitle>
                     {upcomingGame.teams[1]}:{" "}
                     {upcomingGame.sites.map((site) => {

@@ -1,12 +1,12 @@
 export function fetchSports() {
+
+  
   return (dispatch) => {
     fetch("https://api-football-v1.p.rapidapi.com/v2/predictions/157462", {
       method: "GET",
-      mode: "cors",
       headers: {
-        "Access-Control-Allow-Origin": "*",
         "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
-        "x-rapidapi-key": `${process.env.REACT_APP_API_KEY2}`,
+        "x-rapidapi-key": "ea855c707cb722f7be2cd51bc427793f",
       },
     })
       .then((response) => response.json())
