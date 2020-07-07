@@ -11,37 +11,57 @@ class BettingCalculator extends React.Component {
     });
   };
 
-  handleSubmit = (e) => {
+  handleSubmitMoneyline = (e) => {
     e.preventDefault();
-    var odds = oddslib.from("decimal", e).to("moneyline");
+    var moneyline = oddslib.from("decimal", this.state.value).to("moneyline");
 
-    console.log(odds);
-    return odds;
+    console.log(moneyline);
+    this.setState({
+      moneyline: moneyline,
+    });
+  };
+  handleSubmitDecimal = (e) => {
+    e.preventDefault();
+    var decimal = oddslib.from("moneyline", this.state.value).to("decimal");
+
+    console.log(decimal);
+    this.setState({
+      decimal: decimal,
+    });
   };
 
   render() {
     return (
       <div>
         <h1>Betting Calculator</h1>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="number"
-            value={this.state.value}
-            placeholder="Decimal"
-            onChange={this.handleChange}
-          />
-          <input type="submit" value="Submit" />
-        </form>
-        {/* <form>
-          <select>
-            <option value="moneyline">American Odds</option>
-            <option selected value="decimal">
-              Decimal Odds
-            </option>
-          </select>
-          <input type="text" value="" />
-          <button onSubmit={this.oddslib} />
-        </form> */}
+        <div>
+          <h4>Convert Decimal To Moneyline Odds</h4>
+          <form onSubmit={this.handleSubmitMoneyline.bind(this)}>
+            <input
+              type="number"
+              value={this.state.value}
+              placeholder="Decimal"
+              onChange={this.handleChange}
+            />
+            <input type="submit" value="Convert" />
+            <br></br>
+            <p>{this.state.moneyline}</p>
+          </form>
+        </div>
+        <div>
+          <h4>Convert Moneyline To Decimal Odds</h4>
+          <form onSubmit={this.handleSubmitDecimal.bind(this)}>
+            <input
+              type="number"
+              value={this.state.value}
+              placeholder="Moneyline"
+              onChange={this.handleChange}
+            />
+            <input type="submit" value="Convert" />
+            <br></br>
+            <p>{this.state.decimal}</p>
+          </form>
+        </div>
       </div>
     );
   }
