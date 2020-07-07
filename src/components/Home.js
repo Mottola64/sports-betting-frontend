@@ -1,8 +1,9 @@
 import React from "react";
 import { Jumbotron, Container } from "reactstrap";
+import { Link } from "react-router-dom";
 import BettingCalculator from "./BettingCalculator";
 
-const Home = (props) => {
+const Home = () => {
   return (
     <div>
       <Jumbotron fluid>
@@ -14,7 +15,11 @@ const Home = (props) => {
           </p>
         </Container>
       </Jumbotron>
-      <BettingCalculator/>
+
+      <Link to="/login">Log In</Link>
+      <br></br>
+      <Link to="/signup">Sign Up</Link>
+      <BettingCalculator />
     </div>
   );
 };
