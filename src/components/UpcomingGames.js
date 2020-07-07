@@ -1,9 +1,6 @@
 import React from "react";
-// import UpcomingGame from "./UpcomingGame";
 import {
   Card,
-  Button,
-  CardImg,
   CardHeader,
   CardText,
   CardColumns,

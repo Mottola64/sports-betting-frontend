@@ -4,7 +4,6 @@ import {
   Button,
   CardImg,
   CardHeader,
-  CardText,
   CardColumns,
   CardSubtitle,
   CardBody,
@@ -12,10 +11,10 @@ import {
 
 class News extends React.Component {
   handleClick = (url) => {
-      window.open(url)
-  }
+    window.open(url);
+  };
 
-    render() {
+  render() {
     return (
       <div>
         <CardColumns>
@@ -27,6 +26,8 @@ class News extends React.Component {
                 </CardHeader>
                 <CardBody>
                   <CardSubtitle>{article.description}</CardSubtitle>
+                  <br></br>
+
                   {article.urlToImage !== null && (
                     <CardImg
                       width="100%"
@@ -34,9 +35,13 @@ class News extends React.Component {
                       alt={article.title}
                     />
                   )}
-                  {/* <CardText>{article.content}</CardText> */}
                   <br></br><br></br>
-                  <Button variant="primary" onClick={() => window.open(article.url)}>Read Article</Button>
+                  <Button
+                    variant="primary"
+                    onClick={() => window.open(article.url)}
+                  >
+                    Read Article
+                  </Button>
                 </CardBody>
               </Card>
             );

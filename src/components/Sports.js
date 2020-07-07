@@ -2,8 +2,6 @@ import React from "react";
 // import sport from "./sport";
 import {
   Card,
-  Button,
-  CardImg,
   CardHeader,
   CardText,
   CardColumns,

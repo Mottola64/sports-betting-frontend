@@ -5,7 +5,6 @@ import thunk from "redux-thunk";
 import logger from "redux-logger";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import UpcomingGamesContainer from "./containers/UpcomingGamesContainer";
-import SportsContainer from "./containers/SportsContainer";
 import NewsContainer from "./containers/NewsContainer";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
@@ -14,7 +13,6 @@ import sports from "./reducers/sports";
 import sportsnews from "./reducers/sportsnews";
 import "./App.css";
 
-console.log(process.env.REACT_APP_SPORTSNEWS_API_KEY)
 const reducer = combineReducers({
   upcoming,
   sports,
@@ -37,7 +35,6 @@ class App extends React.Component {
             <NavBar />
             <Switch>
               <Route path="/upcominggames" component={UpcomingGamesContainer} />
-              <Route path="/sports" component={SportsContainer} />
               <Route path="/news" component={NewsContainer} />
               <Route exact path="/" component={Home} />
             </Switch>

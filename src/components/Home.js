@@ -1,5 +1,6 @@
 import React from "react";
 import { Jumbotron, Container } from "reactstrap";
+import BettingCalculator from "./BettingCalculator";
 
 const Home = (props) => {
   return (
@@ -13,6 +14,7 @@ const Home = (props) => {
           </p>
         </Container>
       </Jumbotron>
+      <BettingCalculator/>
     </div>
   );
 };
