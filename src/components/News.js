@@ -20,7 +20,7 @@ class News extends React.Component {
         <CardColumns>
           {this.props.sportsnews.map((article) => {
             return (
-              <Card key={article.publishedAt}>
+              <Card key={article.title}>
                 <CardHeader as="h5">
                   <strong>{article.title}</strong>
                 </CardHeader>
