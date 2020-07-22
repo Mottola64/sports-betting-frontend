@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   margin: 0;
-  background-color: #040f0fff;
+  /* background-color: #248232; */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -9,10 +9,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.Jumbotron {
-  text-align: center;
-  background-color: #248232;
-}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -1,21 +1,19 @@
 import React from "react";
-import { Jumbotron, Container } from "reactstrap";
-import BettingCalculator from "./BettingCalculator";
+import { Jumbotron } from "reactstrap";
+import NewsContainer from "../containers/NewsContainer";
 
 const Home = () => {
   return (
     <div>
-      <Jumbotron className="Jumbotron">
-        <Container className="Jumbotron">
-          <h1>The Underdog</h1>
-          <p>
-            Welcome To The Underdog. Here At The Underdog, We NEVER Bet On The
-            Heavy Favorite. We Only Ride With The Biggest Dogs
-          </p>
-        </Container>
+      <Jumbotron fluid className="Jumbotron">
+        <h1 className="display-3 Jumbotron">The Underdog</h1>
+        <p className="lead Jumbotron">
+          Welcome To The Underdog. Here At The Underdog, We NEVER Bet On The
+          Heavy Favorite. We Only Ride With The Biggest Dogs
+        </p>
       </Jumbotron>
 
-      <BettingCalculator />
+      <NewsContainer />
     </div>
   );
 };

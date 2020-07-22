@@ -14,6 +14,7 @@ import sportsnews from "./reducers/sportsnews";
 import dailyschedule from './reducers/dailyschedule'
 import "./App.css";
 import DailyScheduleContainer from "./containers/DailyScheduleContainer";
+import BettingCalculator from "./components/BettingCalculator";
 
 const reducer = combineReducers({
   upcoming,
@@ -40,6 +41,7 @@ class App extends React.Component {
               <Route path="/upcominggames" component={UpcomingGamesContainer} />
               <Route path="/news" component={NewsContainer} />
               <Route path='/dailyschedule' component={DailyScheduleContainer} />
+              <Route path='/oddsconverter' component={BettingCalculator} />
               <Route exact path="/" component={Home}/>
             </Switch>
           </Router>
