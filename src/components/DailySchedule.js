@@ -8,10 +8,10 @@ import {
   CardBody,
 } from "reactstrap";
 import teamPictures from "../data/pictures";
+import Moment from 'react-moment'
 
 class DailySchedule extends React.Component {
-  
-  
+
   render() {
     return (
       <div>
@@ -32,17 +32,16 @@ class DailySchedule extends React.Component {
                   <CardBody>
                     <CardHeader className="text-center" width="100%">
                       <strong>
-                        {dailyScheduledGame.teams.away.name}
-                        at {dailyScheduledGame.teams.home.name}
+                        {dailyScheduledGame.teams.away.name} at {dailyScheduledGame.teams.home.name}
                       </strong>
                     </CardHeader>
-                    <br></br>
+                    <br></br><CardSubtitle><Moment unix format="LT">{dailyScheduledGame.timestamp}</Moment></CardSubtitle>
                     <CardSubtitle><CardImg
                           top src={teamPictures[dailyScheduledGame.teams.away.name]}
                           style=
                           {{
-                            width: "40%",
-                            height: "40%",
+                            width: "30%",
+                            height: "30%",
                             backgroundColor: "white",
                           }}
                           alt="Card image cap" />{" "}
@@ -51,12 +50,13 @@ class DailySchedule extends React.Component {
                           top
                           src={teamPictures[dailyScheduledGame.teams.home.name]}
                           style={{
-                            width: "40%",
-                            height: "40%",
+                            width: "30%",
+                            height: "30%",
                             backgroundColor: "white",
                           }}
                           alt="Card image cap"
                         /></CardSubtitle>
+                        
                   </CardBody>
                 </Card>
               );

@@ -4,27 +4,33 @@ import oddslib from "oddslib";
 class BettingCalculator extends React.Component {
   state = { value: "" };
 
-  handleChange = (e) => {
-    console.log(e.target.value);
+  handleChangeDecimal = (e) => {
     this.setState({
-      value: e.target.value,
+      valueDecimal: e.target.value,
+    });
+  };
+  handleChangeMoneyline = (e) => {
+    this.setState({
+      valueMoneyline: e.target.value,
     });
   };
 
   handleSubmitMoneyline = (e) => {
     e.preventDefault();
-    var moneyline = oddslib.from("decimal", this.state.value).to("moneyline");
+    var moneyline = oddslib
+      .from("decimal", this.state.valueDecimal)
+      .to("moneyline");
 
-    console.log(moneyline);
     this.setState({
       moneyline: moneyline,
     });
   };
   handleSubmitDecimal = (e) => {
     e.preventDefault();
-    var decimal = oddslib.from("moneyline", this.state.value).to("decimal");
+    var decimal = oddslib
+      .from("moneyline", this.state.valueMoneyline)
+      .to("decimal");
 
-    console.log(decimal);
     this.setState({
       decimal: decimal,
     });
@@ -39,9 +45,9 @@ class BettingCalculator extends React.Component {
           <form onSubmit={this.handleSubmitMoneyline.bind(this)}>
             <input
               type="number"
-              value={this.state.value}
+              value={this.state.valueDecimal}
               placeholder="Decimal"
-              onChange={this.handleChange}
+              onChange={this.handleChangeDecimal}
             />
             <input type="submit" value="Convert" />
             <br></br>
@@ -53,9 +59,9 @@ class BettingCalculator extends React.Component {
           <form onSubmit={this.handleSubmitDecimal.bind(this)}>
             <input
               type="number"
-              value={this.state.value}
+              value={this.state.valueMoneyline}
               placeholder="Moneyline"
-              onChange={this.handleChange}
+              onChange={this.handleChangeMoneyline}
             />
             <input type="submit" value="Convert" />
             <br></br>

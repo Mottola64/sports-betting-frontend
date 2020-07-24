@@ -55,10 +55,10 @@ const teamPictures = {
   "Pittsburgh Pirates": pirates,
   "San Francisco Giants": giants,
   "Seattle Mariners": mariners,
-  "St Louis Cardinals": cardinals,
+  "St.Louis Cardinals": cardinals,
   "Tampa Bay Rays": devilrays,
   "Texas Rangers": rangers,
-  "Blue Jays": bluejays,
+  "Toronto Blue Jays": bluejays,
   "San Diego Padres": padres,
 };
 
