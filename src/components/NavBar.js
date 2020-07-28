@@ -27,6 +27,11 @@ class NavBar extends React.Component {
               Odds Converter
             </NavLink>
           </NavItem>
+          <NavItem>
+            <NavLink tag={RRNavLink} to="/mlbstandings">
+              MLB Standings
+            </NavLink>
+          </NavItem>
         </Nav>
       </Navbar>
     );

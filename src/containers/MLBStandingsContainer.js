@@ -1,16 +1,16 @@
 import React from "react";
-import UpcomingGames from "../components/UpcomingGames";
+import MLBStandings from "../components/MLBStandings";
 import { connect } from "react-redux";
-import { fetchUpcomingGames } from "../actions/fetchUpcomingGames";
+import { fetchMlbStandings } from "../actions/fetchMlbStandings";
 import LoadingSpinner from "../components/LoadingSpinner";
 
-class UpcomingGamesContainer extends React.Component {
+class MLBStandingsContainer extends React.Component {
   componentDidMount() {
-    this.props.fetchUpcomingGames();
+    this.props.fetchMlbStandings();
   }
 
   render() {
-    if (this.props.upcoming.length === 0) {
+    if (this.props.mlbstandings.length === 0) {
       return (
         <div
           className="justify-content-center d-flex"
@@ -22,7 +22,7 @@ class UpcomingGamesContainer extends React.Component {
     } else {
       return (
         <div>
-          <UpcomingGames upcoming={this.props.upcoming.data} />
+          <MLBStandings mlbstandings={this.props.mlbstandings} />
         </div>
       );
     }
@@ -31,10 +31,8 @@ class UpcomingGamesContainer extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    upcoming: state.upcoming,
+    mlbstandings: state.mlbstandings,
   };
 };
 
-export default connect(mapStateToProps, { fetchUpcomingGames })(
-  UpcomingGamesContainer
-);
+export default connect(mapStateToProps, { fetchMlbStandings })(MLBStandingsContainer);
