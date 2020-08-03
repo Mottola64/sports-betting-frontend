@@ -42,6 +42,7 @@ class App extends React.Component {
               <Route path="/dailyschedule" component={DailyScheduleContainer} />
               <Route path="/oddsconverter" component={BettingCalculator} />
               <Route path="/mlbstandings" component={MLBStandingsContainer} />
+              <Route path="/odds" component={OddsContainer} />
               <Route exact path="/" component={Home} />
             </Switch>
           </Router>

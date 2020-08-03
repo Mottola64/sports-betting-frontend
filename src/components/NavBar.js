@@ -14,9 +14,11 @@ class NavBar extends React.Component {
               News
             </NavLink>
           </NavItem>
-          <NavLink tag={RRNavLink} to="/upcominggames">
-            Upcoming Games
-          </NavLink>
+          <NavItem>
+            <NavLink tag={RRNavLink} to="/odds">
+              Odds
+            </NavLink>
+          </NavItem>
           <NavItem>
             <NavLink tag={RRNavLink} to="/dailyschedule">
               Daily Schedule
