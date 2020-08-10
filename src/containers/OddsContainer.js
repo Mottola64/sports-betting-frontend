@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchOdds } from "../actions/fetchOdds";
-import LoadingSpinner from "../components/LoadingSpinner";
+// import LoadingSpinner from "../components/LoadingSpinner";
 
 class OddsContainer extends React.Component {
   componentDidMount() {
