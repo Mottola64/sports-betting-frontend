@@ -14,8 +14,8 @@ import mlbstandings from "./reducers/mlbstandings";
 import "./App.css";
 import DailyScheduleContainer from "./containers/DailyScheduleContainer";
 import BettingCalculator from "./components/BettingCalculator";
-import MLBStandingsContainer from "./containers/MLBStandingsContainer";
 import OddsContainer from "./containers/OddsContainer";
+import MLBStandingsContainer from './containers/MLBStandingsContainer'
 
 const reducer = combineReducers({
   sports,
