@@ -10,12 +10,12 @@ import {
 import teamPictures from "../data/pictures";
 import Moment from 'react-moment'
 
-class NhlSchedule extends React.Component {
+class NbaSchedule extends React.Component {
 
   render() {
     return (
       <div>
-        <h1>Upcoming NHL Games</h1>
+        <h1>Upcoming NBA Games</h1>
         {/* <CardColumns>
           {this.props.dailyschedule
             .filter(
@@ -67,4 +67,4 @@ class NhlSchedule extends React.Component {
   }
 }
 
-export default NhlSchedule;
+export default NbaSchedule;

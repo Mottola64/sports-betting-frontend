@@ -1,16 +1,16 @@
 import React from "react";
-import NhlSchedule from "../components/NhlSchedule";
+import NbaSchedule from "../components/NbaSchedule";
 import { connect } from "react-redux";
-import {fetchNhlSchedule} from '../actions/fetchNhlSchedule'
+import {fetchNbaSchedule} from '../actions/fetchNbaSchedule'
 import LoadingSpinner from "../components/LoadingSpinner";
 
-class NhlScheduleContainer extends React.Component {
+class NbaScheduleContainer extends React.Component {
   componentDidMount() {
-    this.props.fetchNhlSchedule();
+    this.props.fetchNbaSchedule();
   }
 
   render() {
-    if (this.props.nhlschedule.length === 0) {
+    if (this.props.nbaschedule.length === 0) {
       return (
         <div
           className="justify-content-center d-flex"
@@ -22,7 +22,7 @@ class NhlScheduleContainer extends React.Component {
     } else {
       return (
         <div>
-          <NhlSchedule nhlschedule={this.props.nhlschedule} />
+          <NbaSchedule nbaschedule={this.props.nbaschedule} />
         </div>
       );
     }
@@ -31,8 +31,8 @@ class NhlScheduleContainer extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    nhlschedule: state.nhlschedule,
+    nbaschedule: state.nbaschedule,
   };
 };
 
-export default connect(mapStateToProps, { fetchNhlSchedule })(NhlScheduleContainer);
+export default connect(mapStateToProps, { fetchNbaSchedule })(NbaScheduleContainer);
