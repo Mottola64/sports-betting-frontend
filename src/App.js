@@ -11,7 +11,8 @@ import sports from "./reducers/sports";
 import sportsnews from "./reducers/sportsnews";
 import dailyschedule from "./reducers/dailyschedule";
 import mlbstandings from "./reducers/mlbstandings";
-import nbaschedule from './reducers/nbaschedule'
+import nbaschedule from './reducers/nbaschedule';
+import nbaresults from './reducers/nbaresults'
 import "./App.css";
 import DailyScheduleContainer from "./containers/DailyScheduleContainer";
 import BettingCalculator from "./components/BettingCalculator";
@@ -25,6 +26,7 @@ const reducer = combineReducers({
   dailyschedule,
   mlbstandings,
   nbaschedule,
+  nbaresults,
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -43,11 +45,11 @@ class App extends React.Component {
             <NavBar />
             <Switch>
               <Route path="/news" component={NewsContainer} />
-              <Route path="/dailyschedule" component={DailyScheduleContainer} />
+              <Route path="/mlb" component={DailyScheduleContainer} />
               <Route path="/oddsconverter" component={BettingCalculator} />
               <Route path="/mlbstandings" component={MLBStandingsContainer} />
               <Route path="/odds" component={OddsContainer} />
-              <Route path='/nbaschedule' component={NbaScheduleContainer} />
+              <Route path='/nba' component={NbaScheduleContainer} />
               <Route exact path="/" component={Home} />
             </Switch>
           </Router>

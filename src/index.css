@@ -15,10 +15,13 @@ code {
 
 .Jumbotron {
   text-align: center;
-  background-color: #248232;
+  background-color: #242424;
+  border-color: #242424;
 }
 
 .Navbar {
-  background-color: #248232;
-  color: #248232
+  background-color: #00b541;
+
+  border: "5px";
+  border-color: #242424;
 }

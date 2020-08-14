@@ -1,111 +1,260 @@
 import React from "react";
 import { Table } from "react-bootstrap";
-const useSortableData = (items, config = null) => {
-  const [sortConfig, setSortConfig] = React.useState(config);
+import teamPictures from "../data/pictures";
+import "../index.css";
 
-  const sortedItems = React.useMemo(() => {
-    let sortableItems = [...items];
-    if (sortConfig !== null) {
-      sortableItems.sort((a, b) => {
-        if (a[sortConfig.key] < b[sortConfig.key]) {
-          return sortConfig.direction === "ascending" ? -1 : 1;
-        }
-        if (a[sortConfig.key] > b[sortConfig.key]) {
-          return sortConfig.direction === "ascending" ? 1 : -1;
-        }
-        return 0;
-      });
-    }
-    return sortableItems;
-  }, [items, sortConfig]);
-
-  const requestSort = (key) => {
-    let direction = "ascending";
-    if (
-      sortConfig &&
-      sortConfig.key === key &&
-      sortConfig.direction === "ascending"
-    ) {
-      direction = "descending";
-    }
-    setSortConfig({ key, direction });
-  };
-
-  return { items: sortedItems, requestSort, sortConfig };
-};
 const MLBStandings = (props) => {
-  const { items, requestSort, sortConfig } = useSortableData(props.mlbstandings);
-  const getClassNamesFor = (name) => {
-    if (!sortConfig) {
-      return;
-    }
-    return sortConfig.key === name ? sortConfig.direction : undefined;
-  };
   return (
-    <div>
-      <Table hover>
+    <div style={{ marginTop: "25px" }}>
+      <h1>MLB Standings</h1>
+      <h4>AL East</h4>
+      <Table
+        striped
+        bordered
+        hover
+        style={{ textAlign: "center", verticalAlign: "middle" }}
+      >
         <thead>
           <tr>
-            <th>
-              <button
-                type="button"
-                onClick={() => requestSort("team.name")}
-                className={getClassNamesFor("team.name")}
-              >
-                Team
-              </button>
-            </th>
-            <th>
-              <button
-                type="button"
-                onClick={() => requestSort("group.name")}
-                className={getClassNamesFor("group.name")}
-              >
-                Division
-              </button>
-            </th>
-            <th>
-              <button
-                type="button"
-                onClick={() => requestSort("games.win.total")}
-                className={getClassNamesFor("games.win.total")}
-              >
-                Wins
-              </button>
-            </th>
-            <th>
-              <button
-                type="button"
-                onClick={() => requestSort("games.lose.total")}
-                className={getClassNamesFor("games.lose.total")}
-              >
-                Losses
-              </button>
-            </th>
-            <th>
-              <button
-                type="button"
-                onClick={() => requestSort("games.win.percentage")}
-                className={getClassNamesFor("games.win.percentage")}
-              >
-                Win Percentage
-              </button>
-            </th>
-            <th>Last 5</th>
+            <th style={{padding: "0px"}}></th>
+            <th className="th">Team</th>
+            <th className="th">Division</th>
+            <th className="th">Wins</th>
+            <th className="th">Losses</th>
+            <th className="th">Win Percentage</th>
+            <th className="th">Last 5</th>
           </tr>
         </thead>
         <tbody>
-          {items.length > 0 &&
-            items.map((item) => (
-              <tr key={item.team.name}>
-                <td>{item.team.name}</td>
-                <td>{item.group.name}</td>
-                <td>{item.games.win.total}</td>
-                <td>{item.games.lose.total}</td>
-                <td>{item.games.win.percentage}</td>
-                <td>{item.form}</td>
-              </tr>
-            ))}
+          {props.mlbstandings.length > 0 &&
+            props.mlbstandings
+              .filter((team) => team.group.name === "AL East")
+              .map((team) => (
+                <tr key={team.team.name}>
+                  <td style={{ margin: "0px", padding: "0px", verticalAlign: "top" }}>
+                    <img
+                      src={teamPictures[team.team.name]}
+                      style={{
+                        width: "15vw",
+                        height: "15vh",
+                        margin: "0px",
+                        padding: "0px"
+                      }}
+                      alt="Card image cap"
+                    />
+                  </td>
+                  <td style={{marginTop: "25px"}}key={team.team.name}>
+                    <strong>{team.team.name}</strong>
+                  </td>
+                  <td key={team.group.name}>{team.group.name}</td>
+                  <td>{team.games.win.total}</td>
+                  <td>{team.games.lose.total}</td>
+                  <td>{team.games.win.percentage}</td>
+                  <td>{team.form}</td>
+                </tr>
+              ))}
+        </tbody>
+      </Table>
+      <h4>AL Central</h4>
+      <Table
+        striped
+        bordered
+        hover
+        style={{ textAlign: "center", verticalAlign: "middle" }}
+      >
+        <thead>
+          <tr>
+            <th></th>
+            <th className="th">Team</th>
+            <th className="th">Division</th>
+            <th className="th">Wins</th>
+            <th className="th">Losses</th>
+            <th className="th">Win Percentage</th>
+            <th className="th">Last 5</th>
+          </tr>
+        </thead>
+        <tbody>
+          {props.mlbstandings.length > 0 &&
+            props.mlbstandings
+              .filter((team) => team.group.name === "AL Central")
+              .map((team) => (
+                <tr key={team.team.name}>
+                  <td style={{ margin: "0px", verticalAlign: "top" }}>
+                    <img
+                      src={teamPictures[team.team.name]}
+                      style={{
+                        width: "30%",
+                        height: "30%",
+                      }}
+                      alt="Card image cap"
+                    />
+                  </td>
+                  <td key={team.team.name}>
+                    <strong>{team.team.name}</strong>
+                  </td>
+                  <td key={team.group.name}>{team.group.name}</td>
+                  <td>{team.games.win.total}</td>
+                  <td>{team.games.lose.total}</td>
+                  <td>{team.games.win.percentage}</td>
+                  <td>{team.form}</td>
+                </tr>
+              ))}
+        </tbody>
+      </Table>
+      <h4>AL West</h4>
+      <Table striped bordered hover style={{ textAlign: 'center', verticalAlign: 'middle'  }}>
+        <thead>
+          <tr>
+            <th></th>
+            <th className="th">Team</th>
+            <th className="th">Division</th>
+            <th className="th">Wins</th>
+            <th className="th">Losses</th>
+            <th className="th">Win Percentage</th>
+            <th className="th">Last 5</th>
+          </tr>
+        </thead>
+        <tbody>
+          {props.mlbstandings.length > 0 &&
+            props.mlbstandings
+              .filter((team) => team.group.name === "AL West")
+              .map((team) => (
+                <tr key={team.team.name}>
+                  <td style={{margin: "0px", verticalAlign: "top"}}><img
+                      src={teamPictures[team.team.name]}
+                      style={{
+                        width: "30%",
+                        height: "30%",
+                      }}
+                      alt="Card image cap"
+                    /></td><td key={team.team.name}>
+                    <strong>{team.team.name}</strong>
+                    
+                  </td>
+                  <td key={team.group.name}>{team.group.name}</td>
+                  <td>{team.games.win.total}</td>
+                  <td>{team.games.lose.total}</td>
+                  <td>{team.games.win.percentage}</td>
+                  <td>{team.form}</td>
+                </tr>
+              ))}
+        </tbody>
+      </Table>
+      <h4>NL East</h4>
+      <Table striped bordered hover style={{ textAlign: 'center', verticalAlign: 'middle'  }}>
+        <thead>
+          <tr>
+            <th></th>
+            <th className="th">Team</th>
+            <th className="th">Division</th>
+            <th className="th">Wins</th>
+            <th className="th">Losses</th>
+            <th className="th">Win Percentage</th>
+            <th className="th">Last 5</th>
+          </tr>
+        </thead>
+        <tbody>
+          {props.mlbstandings.length > 0 &&
+            props.mlbstandings
+              .filter((team) => team.group.name === "NL East")
+              .map((team) => (
+                <tr key={team.team.name}>
+                  <td style={{margin: "0px", verticalAlign: "top"}}><img
+                      src={teamPictures[team.team.name]}
+                      style={{
+                        width: "30%",
+                        height: "30%",
+                      }}
+                      alt="Card image cap"
+                    /></td><td key={team.team.name}>
+                    <strong>{team.team.name}</strong>
+                    
+                  </td>
+                  <td key={team.group.name}>{team.group.name}</td>
+                  <td>{team.games.win.total}</td>
+                  <td>{team.games.lose.total}</td>
+                  <td>{team.games.win.percentage}</td>
+                  <td>{team.form}</td>
+                </tr>
+              ))}
+        </tbody>
+      </Table>
+      <h4>NL Central</h4>
+      <Table striped bordered hover style={{ textAlign: 'center', verticalAlign: 'middle'  }}>
+        <thead>
+          <tr>
+            <th></th>
+            <th className="th">Team</th>
+            <th className="th">Division</th>
+            <th className="th">Wins</th>
+            <th className="th">Losses</th>
+            <th className="th">Win Percentage</th>
+            <th className="th">Last 5</th>
+          </tr>
+        </thead>
+        <tbody>
+          {props.mlbstandings.length > 0 &&
+            props.mlbstandings
+              .filter((team) => team.group.name === "NL Central")
+              .map((team) => (
+                <tr key={team.team.name}>
+                  <td style={{margin: "0px", verticalAlign: "top"}}><img
+                      src={teamPictures[team.team.name]}
+                      style={{
+                        width: "30%",
+                        height: "30%",
+                      }}
+                      alt="Card image cap"
+                    /></td><td key={team.team.name}>
+                    <strong>{team.team.name}</strong>
+                    
+                  </td>
+                  <td key={team.group.name}>{team.group.name}</td>
+                  <td>{team.games.win.total}</td>
+                  <td>{team.games.lose.total}</td>
+                  <td>{team.games.win.percentage}</td>
+                  <td>{team.form}</td>
+                </tr>
+              ))}
+        </tbody>
+      </Table>
+      <h4>NL West</h4>
+      <Table striped bordered hover style={{ textAlign: 'center', verticalAlign: 'middle'  }}>
+        <thead>
+          <tr>
+            <th></th>
+            <th className="th">Team</th>
+            <th className="th">Division</th>
+            <th className="th">Wins</th>
+            <th className="th">Losses</th>
+            <th className="th">Win Percentage</th>
+            <th className="th">Last 5</th>
+          </tr>
+        </thead>
+        <tbody>
+          {props.mlbstandings.length > 0 &&
+            props.mlbstandings
+              .filter((team) => team.group.name === "NL West")
+              .map((team) => (
+                <tr key={team.team.name}>
+                  <td style={{margin: "0px", verticalAlign: "top"}}><img
+                      src={teamPictures[team.team.name]}
+                      style={{
+                        width: "30%",
+                        height: "30%",
+                      }}
+                      alt="Card image cap"
+                    /></td><td key={team.team.name}>
+                    <strong>{team.team.name}</strong>
+                    
+                  </td>
+                  <td key={team.group.name}>{team.group.name}</td>
+                  <td>{team.games.win.total}</td>
+                  <td>{team.games.lose.total}</td>
+                  <td>{team.games.win.percentage}</td>
+                  <td>{team.form}</td>
+                </tr>
+              ))}
         </tbody>
       </Table>
     </div>

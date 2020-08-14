@@ -5,7 +5,7 @@ import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from "reactstrap";
 class NavBar extends React.Component {
   render() {
     return (
-      <Navbar className="navbar Navbar" dark expand="lg">
+      <Navbar className="navbar Navbar" light expand="lg">
         <NavbarBrand href="/">The Underdog</NavbarBrand>
 
         <Nav className="mr-auto " navbar>
@@ -20,13 +20,13 @@ class NavBar extends React.Component {
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink tag={RRNavLink} to="/dailyschedule">
-              Daily Schedule
+            <NavLink tag={RRNavLink} to="/mlb">
+              MLB
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink tag={RRNavLink} to="/nbaschedule">
-              NBA Schedule
+            <NavLink tag={RRNavLink} to="/nba">
+              NBA
             </NavLink>
           </NavItem>
           <NavItem>
