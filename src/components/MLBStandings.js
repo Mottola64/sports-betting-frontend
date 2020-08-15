@@ -16,7 +16,7 @@ const MLBStandings = (props) => {
       >
         <thead>
           <tr>
-            <th style={{padding: "0px"}}></th>
+            <th style={{ padding: "0px" }}></th>
             <th className="th">Team</th>
             <th className="th">Division</th>
             <th className="th">Wins</th>
@@ -31,19 +31,25 @@ const MLBStandings = (props) => {
               .filter((team) => team.group.name === "AL East")
               .map((team) => (
                 <tr key={team.team.name}>
-                  <td style={{ margin: "0px", padding: "0px", verticalAlign: "top" }}>
+                  <td
+                    style={{
+                      margin: "0px",
+                      padding: "0px",
+                      verticalAlign: "top",
+                    }}
+                  >
                     <img
                       src={teamPictures[team.team.name]}
                       style={{
                         width: "15vw",
                         height: "15vh",
                         margin: "0px",
-                        padding: "0px"
+                        padding: "0px",
                       }}
                       alt="Card image cap"
                     />
                   </td>
-                  <td style={{marginTop: "25px"}}key={team.team.name}>
+                  <td style={{ marginTop: "25px" }} key={team.team.name}>
                     <strong>{team.team.name}</strong>
                   </td>
                   <td key={team.group.name}>{team.group.name}</td>
@@ -64,7 +70,7 @@ const MLBStandings = (props) => {
       >
         <thead>
           <tr>
-            <th></th>
+            <th style={{ padding: "0px" }}></th>
             <th className="th">Team</th>
             <th className="th">Division</th>
             <th className="th">Wins</th>
@@ -79,17 +85,25 @@ const MLBStandings = (props) => {
               .filter((team) => team.group.name === "AL Central")
               .map((team) => (
                 <tr key={team.team.name}>
-                  <td style={{ margin: "0px", verticalAlign: "top" }}>
+                  <td
+                    style={{
+                      margin: "0px",
+                      padding: "0px",
+                      verticalAlign: "top",
+                    }}
+                  >
                     <img
                       src={teamPictures[team.team.name]}
                       style={{
-                        width: "30%",
-                        height: "30%",
+                        width: "15vw",
+                        height: "15vh",
+                        margin: "0px",
+                        padding: "0px",
                       }}
                       alt="Card image cap"
                     />
                   </td>
-                  <td key={team.team.name}>
+                  <td style={{ marginTop: "25px" }} key={team.team.name}>
                     <strong>{team.team.name}</strong>
                   </td>
                   <td key={team.group.name}>{team.group.name}</td>
@@ -102,10 +116,15 @@ const MLBStandings = (props) => {
         </tbody>
       </Table>
       <h4>AL West</h4>
-      <Table striped bordered hover style={{ textAlign: 'center', verticalAlign: 'middle'  }}>
+      <Table
+        striped
+        bordered
+        hover
+        style={{ textAlign: "center", verticalAlign: "middle" }}
+      >
         <thead>
           <tr>
-            <th></th>
+            <th style={{ padding: "0px" }}></th>
             <th className="th">Team</th>
             <th className="th">Division</th>
             <th className="th">Wins</th>
@@ -120,16 +139,26 @@ const MLBStandings = (props) => {
               .filter((team) => team.group.name === "AL West")
               .map((team) => (
                 <tr key={team.team.name}>
-                  <td style={{margin: "0px", verticalAlign: "top"}}><img
+                  <td
+                    style={{
+                      margin: "0px",
+                      padding: "0px",
+                      verticalAlign: "top",
+                    }}
+                  >
+                    <img
                       src={teamPictures[team.team.name]}
                       style={{
-                        width: "30%",
-                        height: "30%",
+                        width: "15vw",
+                        height: "15vh",
+                        margin: "0px",
+                        padding: "0px",
                       }}
                       alt="Card image cap"
-                    /></td><td key={team.team.name}>
+                    />
+                  </td>
+                  <td style={{ marginTop: "25px" }} key={team.team.name}>
                     <strong>{team.team.name}</strong>
-                    
                   </td>
                   <td key={team.group.name}>{team.group.name}</td>
                   <td>{team.games.win.total}</td>
@@ -141,10 +170,15 @@ const MLBStandings = (props) => {
         </tbody>
       </Table>
       <h4>NL East</h4>
-      <Table striped bordered hover style={{ textAlign: 'center', verticalAlign: 'middle'  }}>
+      <Table
+        striped
+        bordered
+        hover
+        style={{ textAlign: "center", verticalAlign: "middle" }}
+      >
         <thead>
           <tr>
-            <th></th>
+            <th style={{ padding: "0px" }}></th>
             <th className="th">Team</th>
             <th className="th">Division</th>
             <th className="th">Wins</th>
@@ -159,16 +193,26 @@ const MLBStandings = (props) => {
               .filter((team) => team.group.name === "NL East")
               .map((team) => (
                 <tr key={team.team.name}>
-                  <td style={{margin: "0px", verticalAlign: "top"}}><img
+                  <td
+                    style={{
+                      margin: "0px",
+                      padding: "0px",
+                      verticalAlign: "top",
+                    }}
+                  >
+                    <img
                       src={teamPictures[team.team.name]}
                       style={{
-                        width: "30%",
-                        height: "30%",
+                        width: "15vw",
+                        height: "15vh",
+                        margin: "0px",
+                        padding: "0px",
                       }}
                       alt="Card image cap"
-                    /></td><td key={team.team.name}>
+                    />
+                  </td>
+                  <td style={{ marginTop: "25px" }} key={team.team.name}>
                     <strong>{team.team.name}</strong>
-                    
                   </td>
                   <td key={team.group.name}>{team.group.name}</td>
                   <td>{team.games.win.total}</td>
@@ -180,10 +224,15 @@ const MLBStandings = (props) => {
         </tbody>
       </Table>
       <h4>NL Central</h4>
-      <Table striped bordered hover style={{ textAlign: 'center', verticalAlign: 'middle'  }}>
+      <Table
+        striped
+        bordered
+        hover
+        style={{ textAlign: "center", verticalAlign: "middle" }}
+      >
         <thead>
           <tr>
-            <th></th>
+            <th style={{ padding: "0px" }}></th>
             <th className="th">Team</th>
             <th className="th">Division</th>
             <th className="th">Wins</th>
@@ -198,16 +247,26 @@ const MLBStandings = (props) => {
               .filter((team) => team.group.name === "NL Central")
               .map((team) => (
                 <tr key={team.team.name}>
-                  <td style={{margin: "0px", verticalAlign: "top"}}><img
+                  <td
+                    style={{
+                      margin: "0px",
+                      padding: "0px",
+                      verticalAlign: "top",
+                    }}
+                  >
+                    <img
                       src={teamPictures[team.team.name]}
                       style={{
-                        width: "30%",
-                        height: "30%",
+                        width: "15vw",
+                        height: "15vh",
+                        margin: "0px",
+                        padding: "0px",
                       }}
                       alt="Card image cap"
-                    /></td><td key={team.team.name}>
+                    />
+                  </td>
+                  <td style={{ marginTop: "25px" }} key={team.team.name}>
                     <strong>{team.team.name}</strong>
-                    
                   </td>
                   <td key={team.group.name}>{team.group.name}</td>
                   <td>{team.games.win.total}</td>
@@ -219,10 +278,15 @@ const MLBStandings = (props) => {
         </tbody>
       </Table>
       <h4>NL West</h4>
-      <Table striped bordered hover style={{ textAlign: 'center', verticalAlign: 'middle'  }}>
+      <Table
+        striped
+        bordered
+        hover
+        style={{ textAlign: "center", verticalAlign: "middle" }}
+      >
         <thead>
           <tr>
-            <th></th>
+            <th style={{ padding: "0px" }}></th>
             <th className="th">Team</th>
             <th className="th">Division</th>
             <th className="th">Wins</th>
@@ -237,16 +301,26 @@ const MLBStandings = (props) => {
               .filter((team) => team.group.name === "NL West")
               .map((team) => (
                 <tr key={team.team.name}>
-                  <td style={{margin: "0px", verticalAlign: "top"}}><img
+                  <td
+                    style={{
+                      margin: "0px",
+                      padding: "0px",
+                      verticalAlign: "top",
+                    }}
+                  >
+                    <img
                       src={teamPictures[team.team.name]}
                       style={{
-                        width: "30%",
-                        height: "30%",
+                        width: "15vw",
+                        height: "15vh",
+                        margin: "0px",
+                        padding: "0px",
                       }}
                       alt="Card image cap"
-                    /></td><td key={team.team.name}>
+                    />
+                  </td>
+                  <td style={{ marginTop: "25px" }} key={team.team.name}>
                     <strong>{team.team.name}</strong>
-                    
                   </td>
                   <td key={team.group.name}>{team.group.name}</td>
                   <td>{team.games.win.total}</td>
