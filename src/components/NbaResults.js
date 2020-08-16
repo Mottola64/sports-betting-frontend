@@ -8,6 +8,7 @@ import {
   CardSubtitle,
   CardBody,
 } from "reactstrap";
+import nbaLogos from '../data/nbaLogos'
 
 class NbaResults extends React.Component {
   render() {
@@ -23,21 +24,25 @@ class NbaResults extends React.Component {
                     <strong>{nbaResult.strEventAlternate}</strong>
                   </CardHeader>
                   
-                  <CardSubtitle style={{margin: "10px", marginBottom:"15px"}}>
-                      <strong>{nbaResult.strAwayTeam}</strong>: {nbaResult.intAwayScore}<br></br>
-                      <strong>{nbaResult.strHomeTeam}</strong>: {nbaResult.intHomeScore}<br></br>
-                  </CardSubtitle>
                   <CardSubtitle>
-                    <CardImg
-                      top
-                      src={nbaResult.strThumb}
+                  <CardImg
+                      src={nbaLogos[nbaResult.strAwayTeam]}
                       style={{
-                        width: "100%",
-                        height: "100%",
-                        backgroundColor: "white",
+                        width: "30%",
+                            height: "30%",
                       }}
                       alt="Card image cap"
                     />{" "}
+                    <CardImg
+                      src={nbaLogos[nbaResult.strHomeTeam]}
+                      style={{
+                        width: "30%",
+                        height: "30%",
+                      }}
+                      alt="Card image cap"
+                    /><br></br>
+                      <strong>{nbaResult.strAwayTeam}</strong>: {nbaResult.intAwayScore}<br></br>
+                      <strong>{nbaResult.strHomeTeam}</strong>: {nbaResult.intHomeScore}<br></br>
                   </CardSubtitle>
                   <Button
                     style={{padding: "10px", margin: "10px"}}

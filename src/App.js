@@ -12,7 +12,8 @@ import sportsnews from "./reducers/sportsnews";
 import dailyschedule from "./reducers/dailyschedule";
 import mlbstandings from "./reducers/mlbstandings";
 import nbaschedule from './reducers/nbaschedule';
-import nbaresults from './reducers/nbaresults'
+import nbaresults from './reducers/nbaresults';
+import mlbodds from './reducers/mlbodds'
 import "./App.css";
 import DailyScheduleContainer from "./containers/DailyScheduleContainer";
 import BettingCalculator from "./components/BettingCalculator";
@@ -27,6 +28,7 @@ const reducer = combineReducers({
   mlbstandings,
   nbaschedule,
   nbaresults,
+  mlbodds
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

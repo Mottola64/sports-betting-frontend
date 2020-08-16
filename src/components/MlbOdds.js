@@ -7,32 +7,32 @@ import {
   CardSubtitle,
   CardBody,
 } from "reactstrap";
-import Moment from "react-moment";
-import nbaLogos from '../data/nbaLogos'
+// import Moment from "react-moment";
+import teamPictures from '../data/pictures'
 
-class NbaSchedule extends React.Component {
+class MlbOdds extends React.Component {
   render() {
     return (
       <div>
-        <h1>Upcoming NBA Games</h1>
+        <h1>MLB Odds</h1>
         <CardColumns>
-          {this.props.nbaschedule.map((nbaScheduledGame) => {
+          {this.props.mlbodds.map((mlbGame) => {
             return (
-              <Card key={nbaScheduledGame.idEvent}>
+              <Card key={mlbGame.teams[0]}>
                 <CardBody>
                   <CardHeader className="text-center" width="100%">
-                    <strong>{nbaScheduledGame.strEventAlternate}</strong>
+                    <strong>{mlbGame.teams[0]}</strong>
                   </CardHeader>
                   <br></br>
-                  <CardSubtitle>
-                    {nbaScheduledGame.strTime > Date() && <Moment parse="HH:mm:ss">
-                      <strong>{nbaScheduledGame.strTime}</strong>
+                  {/* <CardSubtitle>
+                    {mlbGame.strTime > Date() && <Moment parse="HH:mm:ss">
+                      <strong>{mlbGame.strTime}</strong>
             </Moment>}
                     
-                  </CardSubtitle><br></br>
+                  </CardSubtitle><br></br> */}
                   <CardSubtitle>
                   <CardImg
-                      src={nbaLogos[nbaScheduledGame.strAwayTeam]}
+                      src={teamPictures[mlbGame.teams[1]]}
                       style={{
                         width: "30%",
                             height: "30%",
@@ -40,7 +40,7 @@ class NbaSchedule extends React.Component {
                       alt="Card image cap"
                     />{" "}
                     <CardImg
-                      src={nbaLogos[nbaScheduledGame.strHomeTeam]}
+                      src={teamPictures[mlbGame.teams[0]]}
                       style={{
                         width: "30%",
                         height: "30%",
@@ -58,4 +58,4 @@ class NbaSchedule extends React.Component {
   }
 }
 
-export default NbaSchedule;
+export default MlbOdds;
