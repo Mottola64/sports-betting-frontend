@@ -10,7 +10,7 @@ class OddsContainer extends React.Component {
   }
 
   render() {
-    if (this.props.nbaschedule.length === 0) {
+    if (this.props.mlbodds.length === 0) {
       return (
         <div
           className="justify-content-center d-flex"

@@ -7,8 +7,8 @@ import {
   CardSubtitle,
   CardBody,
 } from "reactstrap";
-// import Moment from "react-moment";
-import teamPictures from '../data/pictures'
+import Moment from "react-moment";
+import teamPictures from "../data/pictures";
 
 class MlbOdds extends React.Component {
   render() {
@@ -24,18 +24,18 @@ class MlbOdds extends React.Component {
                     <strong>{mlbGame.teams[0]}</strong>
                   </CardHeader>
                   <br></br>
-                  {/* <CardSubtitle>
-                    {mlbGame.strTime > Date() && <Moment parse="HH:mm:ss">
-                      <strong>{mlbGame.strTime}</strong>
-            </Moment>}
-                    
-                  </CardSubtitle><br></br> */}
                   <CardSubtitle>
-                  <CardImg
+                    <Moment unix format="LT">
+                      {mlbGame.commence_time}
+                    </Moment>
+                  </CardSubtitle>
+                  <br></br>
+                  <CardSubtitle>
+                    <CardImg
                       src={teamPictures[mlbGame.teams[1]]}
                       style={{
                         width: "30%",
-                            height: "30%",
+                        height: "30%",
                       }}
                       alt="Card image cap"
                     />{" "}
