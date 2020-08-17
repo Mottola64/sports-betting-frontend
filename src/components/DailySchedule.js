@@ -67,7 +67,7 @@ class DailySchedule extends React.Component {
                           dailyScheduledGame.teams.away.name.replace(
                             /\s+/g,
                             ""
-                          )) ? this.props.mlbodds.sites[0].odds.h2h[0]:null}
+                          )) ? this.props.mlbodds[0].sites[0].odds.h2h[0]:null}
                       </strong>
                     </CardSubtitle>
                   </CardBody>
