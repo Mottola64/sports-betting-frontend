@@ -38,8 +38,8 @@ class BettingCalculator extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Odds Converter</h1>
+      <div className="container-fluid">
+        <h1 >Odds Converter</h1>
         <div>
           <h4>Convert Decimal To Moneyline Odds</h4>
           <form onSubmit={this.handleSubmitMoneyline.bind(this)}>
