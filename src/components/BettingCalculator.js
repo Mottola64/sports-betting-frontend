@@ -1,5 +1,6 @@
 import React from "react";
 import oddslib from "oddslib";
+import {Jumbotron} from 'react-bootstrap'
 
 class BettingCalculator extends React.Component {
   state = { value: "" };
@@ -38,7 +39,7 @@ class BettingCalculator extends React.Component {
 
   render() {
     return (
-      <div className="container-fluid">
+      <Jumbotron className="container-fluid">
         <h1 >Odds Converter</h1>
         <div>
           <h4>Convert Decimal To Moneyline Odds</h4>
@@ -68,7 +69,7 @@ class BettingCalculator extends React.Component {
             <p>{this.state.decimal}</p>
           </form>
         </div>
-      </div>
+      </Jumbotron>
     );
   }
 }
