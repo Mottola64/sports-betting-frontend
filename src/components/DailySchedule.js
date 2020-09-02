@@ -59,7 +59,7 @@ class DailySchedule extends React.Component {
                       />
                     </CardSubtitle>
                     <CardSubtitle>
-                      <strong>
+                      {/* <strong>
                         {this.props.mlbodds.filter((game) => game.home_team.replace(
                             /\s+/g,
                             ""
@@ -68,7 +68,7 @@ class DailySchedule extends React.Component {
                             /\s+/g,
                             ""
                           )) ? this.props.mlbodds[0].sites[0].odds.h2h[0]:null}
-                      </strong>
+                      </strong> */}
                     </CardSubtitle>
                   </CardBody>
                 </Card>

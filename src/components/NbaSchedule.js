@@ -18,7 +18,7 @@ class NbaSchedule extends React.Component {
         <CardColumns>
           {this.props.nbaschedule.map((nbaScheduledGame) => {
             return (
-              <Card key={nbaScheduledGame.idEvent}>
+              <Card id="nbacard" key={nbaScheduledGame.idEvent}>
                 <CardBody>
                   <CardHeader className="text-center" width="100%">
                     <strong>{nbaScheduledGame.strEventAlternate}</strong>
