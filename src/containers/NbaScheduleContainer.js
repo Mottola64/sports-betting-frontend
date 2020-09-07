@@ -7,7 +7,9 @@ import {fetchNbaResults} from '../actions/fetchNbaResults'
 import LoadingSpinner from "../components/LoadingSpinner";
 
 class NbaScheduleContainer extends React.Component {
+  
   componentDidMount() {
+  debugger
     this.props.fetchNbaSchedule();
     this.props.fetchNbaResults()
   }

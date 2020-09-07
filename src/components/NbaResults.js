@@ -50,13 +50,13 @@ class NbaResults extends React.Component {
                       <strong>{nbaResult.strHomeTeam}</strong>: {nbaResult.intHomeScore}<br></br>
                   </CardSubtitle>
                   {/* <CardSubtitle style={{marginTop: "10px"}}><iframe style={{maxWidth: '640px', maxHeight: '360px', margin: '0px'}} className="embed-responsive-item" title="videoplayer" src={`https://www.youtube.com/embed/${nbaResult.strVideo.split('=')[1]}`} gesture="media" allow="encrypted-media" allowFullScreen/></CardSubtitle>  */}
-                  <Button
+                  {/* <Button
                     style={{padding: "10px", margin: "10px"}}
                     variant="primary"
                     onClick={() => window.open(nbaResult.strVideo)}
                   >
                     Highlights
-                  </Button>
+                  </Button> */}
                 </CardBody>
               </Card>
             );

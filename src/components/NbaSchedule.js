@@ -17,7 +17,7 @@ class NbaSchedule extends React.Component {
         <h1>Upcoming NBA Games</h1>
         <CardColumns>
           {this.props.nbaschedule
-            .filter((game) => game.intAwayScore === null)
+            // .filter((game) => game.intAwayScore === null)
             .map((nbaScheduledGame) => {
               return (
                 <Card
@@ -34,9 +34,9 @@ class NbaSchedule extends React.Component {
                       {/* {nbaScheduledGame.strTime < Date() && <Moment parse="HH:mm:ss">
                       <strong>{nbaScheduledGame.strTime}</strong>
             </Moment>} */}
-                      {/* <Moment format = "YYYY-MM-DD">
+                      <Moment format = "YYYY-MM-DD">
                         {nbaScheduledGame.dateEvent}
-                      </Moment> */}
+                      </Moment>
                     </CardSubtitle>
                     <br></br>
                     <CardSubtitle>
