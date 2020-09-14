@@ -11,15 +11,16 @@ import sports from "./reducers/sports";
 import sportsnews from "./reducers/sportsnews";
 import dailyschedule from "./reducers/dailyschedule";
 import mlbstandings from "./reducers/mlbstandings";
-import nbaschedule from './reducers/nbaschedule';
-import nbaresults from './reducers/nbaresults';
-import mlbodds from './reducers/mlbodds'
+import nbaschedule from "./reducers/nbaschedule";
+import nbaresults from "./reducers/nbaresults";
+import mlbodds from "./reducers/mlbodds";
 import "./App.css";
 import DailyScheduleContainer from "./containers/DailyScheduleContainer";
 import BettingCalculator from "./components/BettingCalculator";
 import OddsContainer from "./containers/OddsContainer";
-import MLBStandingsContainer from './containers/MLBStandingsContainer'
+import MLBStandingsContainer from "./containers/MLBStandingsContainer";
 import NbaScheduleContainer from "./containers/NbaScheduleContainer";
+import { BreakpointProvider } from "react-socks";
 
 const reducer = combineReducers({
   sports,
@@ -28,7 +29,7 @@ const reducer = combineReducers({
   mlbstandings,
   nbaschedule,
   nbaresults,
-  mlbodds
+  mlbodds,
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -41,22 +42,24 @@ let myStore = createStore(
 class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <Provider store={myStore}>
-          <Router>
-            <NavBar />
-            <Switch>
-              <Route path="/news" component={NewsContainer} />
-              <Route path="/mlb" component={DailyScheduleContainer} />
-              <Route path="/oddsconverter" component={BettingCalculator} />
-              <Route path="/mlbstandings" component={MLBStandingsContainer} />
-              <Route path="/odds" component={OddsContainer} />
-              <Route path='/nba' component={NbaScheduleContainer} />
-              <Route exact path="/" component={Home} />
-            </Switch>
-          </Router>
-        </Provider>
-      </div>
+      <BreakpointProvider>
+        <div className="App">
+          <Provider store={myStore}>
+            <Router>
+              <NavBar />
+              <Switch>
+                <Route path="/news" component={NewsContainer} />
+                <Route path="/mlb" component={DailyScheduleContainer} />
+                <Route path="/oddsconverter" component={BettingCalculator} />
+                <Route path="/mlbstandings" component={MLBStandingsContainer} />
+                <Route path="/odds" component={OddsContainer} />
+                <Route path="/nba" component={NbaScheduleContainer} />
+                <Route exact path="/" component={Home} />
+              </Switch>
+            </Router>
+          </Provider>
+        </div>
+      </BreakpointProvider>
     );
   }
 }
