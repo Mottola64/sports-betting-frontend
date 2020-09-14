@@ -13,9 +13,9 @@ import nbaLogos from '../data/nbaLogos'
 class NbaResults extends React.Component {
   
   render() {
-    function getEmbedString(str) {
-      return str.split('=')[1];
-  }
+  //   function getEmbedString(str) {
+  //     return str.split('=')[1];
+  // }
     return (
       <div>
         <h1>NBA Results</h1>

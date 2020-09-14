@@ -9,13 +9,12 @@ import LoadingSpinner from "../components/LoadingSpinner";
 class NbaScheduleContainer extends React.Component {
   
   componentDidMount() {
-  debugger
-    this.props.fetchNbaSchedule();
+    // this.props.fetchNbaSchedule();
     this.props.fetchNbaResults()
   }
 
   render() {
-    if (this.props.nbaschedule.length === 0) {
+    if (this.props.nbaschedule.length === 0 && this.props.nbaresults.length === 0) {
       return (
         <div
           className="justify-content-center d-flex"
