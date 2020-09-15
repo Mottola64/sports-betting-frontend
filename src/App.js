@@ -44,8 +44,8 @@ class App extends React.Component {
     return (
       <BreakpointProvider>
         <div className="App" style={{
-    width: "100%",
-    height: "100%",
+    width: "100vw",
+    height: "100vh",
     margin: "0px",
     padding: "0px",
     overflowX: "hidden"

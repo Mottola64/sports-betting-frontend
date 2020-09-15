@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Table } from "react-bootstrap";
 import teamPictures from "../data/pictures";
 
-export const MLBTable = (props) => {
+export const MLBTableMobile = (props) => {
   const [group] = useState(props.group);
   const [teams] = useState(props.teams);
 
@@ -21,11 +21,10 @@ export const MLBTable = (props) => {
         <thead>
           <tr>
             <th style={{ padding: "0px" }}></th>
-            <th className="th">Team</th>
+            
             <th className="th">Wins</th>
             <th className="th">Losses</th>
-            <th className="th">Win Percentage</th>
-            <th className="th">Last 5</th>
+            <th className="th">Win PCT</th>
           </tr>
         </thead>
         <tbody>
@@ -49,14 +48,11 @@ export const MLBTable = (props) => {
                   alt=""
                 />
               </td>
-              <td style={{ marginTop: "25px" }} key={team.team.name}>
-                <strong>{team.team.name}</strong>
-              </td>
+             
 
               <td>{team.games.win.total}</td>
               <td>{team.games.lose.total}</td>
               <td>{team.games.win.percentage}</td>
-              <td>{team.form}</td>
             </tr>
           ))}
         </tbody>

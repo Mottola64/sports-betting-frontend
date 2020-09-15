@@ -1,5 +1,7 @@
 import React from "react";
 import { MLBTable } from "./MLBTable";
+import {MLBTableMobile} from './MLBTableMobile';
+import Breakpoint from "react-socks";
 import "../index.css";
 import "../mlbStandings.css";
 
@@ -15,13 +17,26 @@ const MLBStandings = (props) => {
   console.log(sortedTeams);
 
   return (
-    <div style={{ marginTop: "25px" }}>
-      <h1>MLB Standings</h1>
+    <>
+    <Breakpoint medium up>
+      <div style={{ marginTop: "25px" }}>
+        <h1>MLB Standings</h1>
 
-      {Object.keys(sortedTeams).map((group) => (
-        <MLBTable group={group} teams={sortedTeams[group]} />
-      ))}
-    </div>
+        {Object.keys(sortedTeams).map((group) => (
+          <MLBTable group={group} teams={sortedTeams[group]} />
+        ))}
+      </div>
+    </Breakpoint>
+    <Breakpoint xsmall up>
+      <div style={{ marginTop: "25px" }}>
+        <h1>MLB Standings</h1>
+
+        {Object.keys(sortedTeams).map((group) => (
+          <MLBTableMobile group={group} teams={sortedTeams[group]} />
+        ))}
+      </div>
+    </Breakpoint>
+    </>
   );
 };
 

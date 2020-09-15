@@ -22,7 +22,10 @@ class MLBStandingsContainer extends React.Component {
     } else {
       return (
         <div>
-          <MLBStandings style={{width: "100%"}} mlbstandings={this.props.mlbstandings} />
+          <MLBStandings
+            style={{ width: "100vw", height: "100vh" }}
+            mlbstandings={this.props.mlbstandings}
+          />
         </div>
       );
     }
@@ -35,4 +38,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { fetchMlbStandings })(MLBStandingsContainer);
+export default connect(mapStateToProps, { fetchMlbStandings })(
+  MLBStandingsContainer
+);
