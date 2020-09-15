@@ -15,13 +15,13 @@ export const MLBTableMobile = (props) => {
         style={{
           display: "flexbox",
           flexDirection: "row",
-          contentAlignment: "middle-center"
+          contentAlignment: "middle-center",
         }}
       >
         <thead>
           <tr>
             <th style={{ padding: "0px" }}></th>
-            
+
             <th className="th">Wins</th>
             <th className="th">Losses</th>
             <th className="th">Win PCT</th>
@@ -48,7 +48,6 @@ export const MLBTableMobile = (props) => {
                   alt=""
                 />
               </td>
-             
 
               <td>{team.games.win.total}</td>
               <td>{team.games.lose.total}</td>

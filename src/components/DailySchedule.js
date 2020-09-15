@@ -6,6 +6,7 @@ import {
   CardColumns,
   CardSubtitle,
   CardBody,
+  Container
 } from "reactstrap";
 import teamPictures from "../data/pictures";
 import Moment from "react-moment";
@@ -13,8 +14,8 @@ import Moment from "react-moment";
 class DailySchedule extends React.Component {
   render() {
     return (
-      <div>
-        <h1>MLB Games Today</h1>
+      <Container fluid>
+        <h1 style={{marginTop: "20px"}}>MLB Games Today</h1>
         <CardColumns>
           {this.props.dailyschedule
             .filter((game) => game.status.short !== "CANC")
@@ -23,7 +24,7 @@ class DailySchedule extends React.Component {
               return (
                 <Card key={dailyScheduledGame.id}>
                   <CardBody>
-                    <CardHeader className="text-center" width="100%">
+                    <CardHeader className="text-center" width="95%">
                       <strong>
                         {dailyScheduledGame.teams.away.name} at{" "}
                         {dailyScheduledGame.teams.home.name}
@@ -75,7 +76,7 @@ class DailySchedule extends React.Component {
               );
             })}
         </CardColumns>
-      </div>
+      </Container>
     );
   }
 }
