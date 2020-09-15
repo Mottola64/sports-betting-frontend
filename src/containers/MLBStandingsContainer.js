@@ -22,7 +22,7 @@ class MLBStandingsContainer extends React.Component {
     } else {
       return (
         <div>
-          <MLBStandings mlbstandings={this.props.mlbstandings} />
+          <MLBStandings style={{width: "100%"}} mlbstandings={this.props.mlbstandings} />
         </div>
       );
     }

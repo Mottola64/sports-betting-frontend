@@ -43,7 +43,13 @@ class App extends React.Component {
   render() {
     return (
       <BreakpointProvider>
-        <div className="App">
+        <div className="App" style={{
+    width: "100%",
+    height: "100%",
+    margin: "0px",
+    padding: "0px",
+    overflowX: "hidden"
+}}>
           <Provider store={myStore}>
             <Router>
               <NavBar />
