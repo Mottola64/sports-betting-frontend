@@ -7,7 +7,9 @@ import {
   CardColumns,
   CardSubtitle,
   CardBody,
+  Container
 } from "reactstrap";
+import teamPictures from "../data/pictures";
 
 class News extends React.Component {
   handleClick = (url) => {
@@ -16,7 +18,7 @@ class News extends React.Component {
 
   render() {
     return (
-      <div>
+      <Container fluid>
         <CardColumns>
           {this.props.sportsnews.map((article) => {
             return (
@@ -28,13 +30,13 @@ class News extends React.Component {
                   <CardSubtitle>{article.description}</CardSubtitle>
                   <br></br>
 
-                  {article.urlToImage !== null && (
+                  {(article.urlToImage !== null)? (
                     <CardImg
                       width="100%"
                       src={article.urlToImage}
                       alt={article.title}
                     />
-                  )}
+                  ) : <CardImg width="100%" src={teamPictures["New York Mets"]}/>}
                   <br></br><br></br>
                   <Button
                     variant="primary"
@@ -47,7 +49,7 @@ class News extends React.Component {
             );
           })}
         </CardColumns>
-      </div>
+      </Container>
     );
   }
 }
