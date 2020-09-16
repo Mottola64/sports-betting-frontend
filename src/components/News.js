@@ -18,7 +18,7 @@ class News extends React.Component {
 
   render() {
     return (
-      <Container fluid>
+      <Container style={{marginTop: "20px"}}fluid>
         <CardColumns>
           {this.props.sportsnews.map((article) => {
             return (
@@ -32,11 +32,11 @@ class News extends React.Component {
 
                   {(article.urlToImage !== null)? (
                     <CardImg
-                      width="100%"
                       src={article.urlToImage}
                       alt={article.title}
                     />
-                  ) : <CardImg width="100%" src={teamPictures["New York Mets"]}/>}
+                  ) : <CardImg style={{width: "60%", height: "60%"}} src={teamPictures["logo"]}/>}
+                  
                   <br></br><br></br>
                   <Button
                     variant="primary"

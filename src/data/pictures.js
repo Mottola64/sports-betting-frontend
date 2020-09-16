@@ -28,6 +28,7 @@ import cardinals from "../assets/images/cardinals.svg";
 import devilrays from "../assets/images/devil-rays.svg";
 import rangers from "../assets/images/rangers.svg";
 import bluejays from "../assets/images/blue-jays.svg";
+import logo from '../assets/logo.png'
 
 const teamPictures = {
   "Los Angeles Angels": angels,
@@ -61,6 +62,7 @@ const teamPictures = {
   "Texas Rangers": rangers,
   "Toronto Blue Jays": bluejays,
   "San Diego Padres": padres,
+  logo
 };
 
 export default teamPictures;
