@@ -27,7 +27,7 @@ const MLBStandings = (props) => {
         ))}
       </div>
     </Breakpoint>
-    <Breakpoint xsmall up>
+    <Breakpoint small down>
       <div style={{ marginTop: "25px" }}>
         <h1>MLB Standings</h1>
 
