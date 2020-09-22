@@ -10,7 +10,7 @@ import {
 } from "reactstrap";
 import teamPictures from '../data/pictures'
 
-class mlbresults extends React.Component {
+class MlbResults extends React.Component {
   
   render() {
 
@@ -47,7 +47,7 @@ class mlbresults extends React.Component {
                       <strong>{mlbResult.strAwayTeam}</strong>: {mlbResult.intAwayScore}<br></br>
                       <strong>{mlbResult.strHomeTeam}</strong>: {mlbResult.intHomeScore}<br></br>
                   </CardSubtitle>
-                  {/* <CardSubtitle style={{marginTop: "10px"}}><iframe style={{maxWidth: '640px', maxHeight: '360px', margin: '0px'}} className="embed-responsive-item" title="videoplayer" src={`https://www.youtube.com/embed/${mlbResult.strVideo.split('=')[1]}`} gesture="media" allow="encrypted-media" allowFullScreen/></CardSubtitle>  */}
+                  
                   <Button
                     style={{padding: "10px", margin: "10px"}}
                     variant="primary"
@@ -65,4 +65,4 @@ class mlbresults extends React.Component {
   }
 }
 
-export default mlbresults;
+export default MlbResults;
