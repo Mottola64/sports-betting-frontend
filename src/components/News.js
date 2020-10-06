@@ -30,7 +30,7 @@ class News extends React.Component {
                   <CardSubtitle>{article.description}</CardSubtitle>
                   <br></br>
 
-                  {(article.urlToImage !== null)? (
+                  {(article.urlToImage !== null && article.urlToImage !== "")? (
                     <CardImg
                       src={article.urlToImage}
                       alt={article.title}

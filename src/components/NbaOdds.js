@@ -7,6 +7,7 @@ import {
   CardColumns,
   CardSubtitle,
   CardBody,
+  Container,
   UncontrolledCollapse,
 } from "reactstrap";
 import Moment from "react-moment";
@@ -16,19 +17,21 @@ const NbaOdds = (props) => {
   return (
     <div>
       <h1>NBA Odds</h1>
+      <Container fluid>
+
       <CardColumns>
         {props.nbaodds.map((nbaGame) => {
           return (
             <Card key={nbaGame.teams[0]}>
               <CardBody>
-                <CardHeader className="text-center" width="100%">
+                <CardHeader className="text-center" width="95%" margin="10px">
                   <strong>
                     {nbaGame.teams[0]} @ {nbaGame.teams[1]}
                   </strong>
                 </CardHeader>
                 <br></br>
                 <CardSubtitle>
-                  <Moment unix format="LT">
+                  <Moment unix format="MM/DD/YY">
                     {nbaGame.commence_time}
                   </Moment>
                 </CardSubtitle>
@@ -78,6 +81,7 @@ const NbaOdds = (props) => {
           );
         })}
       </CardColumns>
+      </Container>
     </div>
   );
 };

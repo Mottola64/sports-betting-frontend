@@ -8,7 +8,7 @@ import LoadingSpinner from "../components/LoadingSpinner";
 
 class NbaScheduleContainer extends React.Component {
   componentDidMount() {
-    // this.props.fetchNbaSchedule();
+    this.props.fetchNbaSchedule();
     this.props.fetchNbaResults();
   }
 
