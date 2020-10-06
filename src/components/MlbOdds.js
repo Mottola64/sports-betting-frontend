@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Button,
   Card,
@@ -13,8 +13,6 @@ import Moment from "react-moment";
 import teamPictures from "../data/pictures";
 
 const MlbOdds = (props) => {
-  
-
   return (
     <div>
       <h1>MLB Odds</h1>
@@ -54,20 +52,26 @@ const MlbOdds = (props) => {
                   />
                 </CardSubtitle>
                 <Button id="toggler">Odds</Button>
-                <UncontrolledCollapse toggler={"toggler"}>
-                  {mlbGame.sites.map((site) => {
-                    return (
-                      <ul key={site.site_nice}>
-                        {site.site_nice}
-                        <li>
-                          {mlbGame.teams[0]}: {site.odds.h2h[1]}
-                        </li>
-                        <li>
-                          {mlbGame.teams[1]}: {site.odds.h2h[0]}
-                        </li>
-                      </ul>
-                    );
-                  })}
+                <UncontrolledCollapse toggler={"toggler"} style={{marginTop: "10px"}}>
+                  {mlbGame.sites
+                    .filter(
+                      (betsite) =>
+                        betsite.site_nice === "FanDuel" ||
+                        betsite.site_nice === "DraftKings" || betsite.site_nice === "PointsBet (US)"
+                    )
+                    .map((site) => {
+                      return (
+                        <p key={site.site_nice}>
+                          {site.site_nice}
+                          <li>
+                            {mlbGame.teams[0]}: {site.odds.h2h[0]}
+                          </li>
+                          <li>
+                            {mlbGame.teams[1]}: {site.odds.h2h[1]}
+                          </li>
+                        </p>
+                      );
+                    })}
                 </UncontrolledCollapse>
               </CardBody>
             </Card>
