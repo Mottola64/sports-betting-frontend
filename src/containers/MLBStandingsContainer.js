@@ -3,6 +3,7 @@ import MLBStandings from "../components/MLBStandings";
 import { connect } from "react-redux";
 import { fetchMlbStandings } from "../actions/fetchMlbStandings";
 import LoadingSpinner from "../components/LoadingSpinner";
+import {Container} from 'reactstrap'
 
 class MLBStandingsContainer extends React.Component {
   componentDidMount() {
@@ -21,12 +22,12 @@ class MLBStandingsContainer extends React.Component {
       );
     } else {
       return (
-        <div>
+        <Container fluid>
           <MLBStandings
             style={{ width: "100vw", height: "100vh" }}
             mlbstandings={this.props.mlbstandings}
           />
-        </div>
+        </Container>
       );
     }
   }

@@ -8,7 +8,7 @@ export const MLBTable = (props) => {
 
   return (
     <>
-      <h4>{group}</h4>
+      <h3><strong>{group}</strong></h3>
       <Table
         striped
         hover

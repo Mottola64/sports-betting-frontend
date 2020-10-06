@@ -22,8 +22,8 @@ const MLBStandings = (props) => {
       <div style={{ marginTop: "25px" }}>
         <h1>MLB Standings</h1>
 
-        {Object.keys(sortedTeams).map((group) => (
-          <MLBTable group={group} teams={sortedTeams[group]} />
+        {Object.keys(sortedTeams).filter((group => (group !== "American League") && (group !== "National League"))).map((group) => (
+          <MLBTable group={group} teams={sortedTeams[group]} key={group} />
         ))}
       </div>
     </Breakpoint>
@@ -31,8 +31,8 @@ const MLBStandings = (props) => {
       <div style={{ marginTop: "25px" }}>
         <h1>MLB Standings</h1>
 
-        {Object.keys(sortedTeams).map((group) => (
-          <MLBTableMobile group={group} teams={sortedTeams[group]} />
+        {Object.keys(sortedTeams).filter((group => (group !== "American League") && (group !== "National League"))).map((group) => (
+          <MLBTableMobile group={group} teams={sortedTeams[group]} key={(sortedTeams.group) + "mobile"} />
         ))}
       </div>
     </Breakpoint>
