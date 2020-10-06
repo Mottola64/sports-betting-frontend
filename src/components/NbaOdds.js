@@ -10,32 +10,32 @@ import {
   UncontrolledCollapse,
 } from "reactstrap";
 import Moment from "react-moment";
-import teamPictures from "../data/pictures";
+import nbaLogos from "../data/nbaLogos";
 
-const MlbOdds = (props) => {
+const NbaOdds = (props) => {
   return (
     <div>
-      <h1>MLB Odds</h1>
+      <h1>NBA Odds</h1>
       <CardColumns>
-        {props.mlbodds.map((mlbGame) => {
+        {props.nbaodds.map((nbaGame) => {
           return (
-            <Card key={mlbGame.teams[0]}>
+            <Card key={nbaGame.teams[0]}>
               <CardBody>
                 <CardHeader className="text-center" width="100%">
                   <strong>
-                    {mlbGame.teams[0]} @ {mlbGame.teams[1]}
+                    {nbaGame.teams[0]} @ {nbaGame.teams[1]}
                   </strong>
                 </CardHeader>
                 <br></br>
                 <CardSubtitle>
                   <Moment unix format="LT">
-                    {mlbGame.commence_time}
+                    {nbaGame.commence_time}
                   </Moment>
                 </CardSubtitle>
                 <br></br>
                 <CardSubtitle>
                   <CardImg
-                    src={teamPictures[mlbGame.teams[0]]}
+                    src={nbaLogos[nbaGame.teams[0]]}
                     style={{
                       width: "30%",
                       height: "30%",
@@ -43,7 +43,7 @@ const MlbOdds = (props) => {
                     alt="Card image cap"
                   />{" "}
                   <CardImg
-                    src={teamPictures[mlbGame.teams[1]]}
+                    src={nbaLogos[nbaGame.teams[1]]}
                     style={{
                       width: "30%",
                       height: "30%",
@@ -51,9 +51,9 @@ const MlbOdds = (props) => {
                     alt="Card image cap"
                   />
                 </CardSubtitle>
-                <Button id="mlbtoggler">Odds</Button>
-                <UncontrolledCollapse toggler={"mlbtoggler"} >
-                  {mlbGame.sites
+                <Button id="toggler">Odds</Button>
+                <UncontrolledCollapse toggler={"toggler"} style={{marginTop: "10px"}}>
+                  {nbaGame.sites
                     .filter(
                       (betsite) =>
                         betsite.site_nice === "FanDuel" ||
@@ -64,10 +64,10 @@ const MlbOdds = (props) => {
                         <p key={site.site_nice}>
                           {site.site_nice}
                           <li>
-                            {mlbGame.teams[0]}: {site.odds.h2h[0]}
+                            {nbaGame.teams[0]}: {site.odds.h2h[0]}
                           </li>
                           <li>
-                            {mlbGame.teams[1]}: {site.odds.h2h[1]}
+                            {nbaGame.teams[1]}: {site.odds.h2h[1]}
                           </li>
                         </p>
                       );
@@ -82,4 +82,4 @@ const MlbOdds = (props) => {
   );
 };
 
-export default MlbOdds;
+export default NbaOdds;
