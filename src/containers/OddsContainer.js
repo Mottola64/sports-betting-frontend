@@ -2,15 +2,18 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchMlbOdds } from "../actions/fetchMlbOdds";
 import { fetchNbaOdds } from '../actions/fetchNbaOdds';
+import { fetchNflOdds } from '../actions/fetchNflOdds';
 import LoadingSpinner from "../components/LoadingSpinner";
 import MlbOdds from '../components/MlbOdds'
 import NbaOdds from '../components/NbaOdds'
+import NflOdds from '../components/NflOdds'
 import {Container} from 'reactstrap'
 
 class OddsContainer extends React.Component {
   componentDidMount() {
     this.props.fetchMlbOdds();
     this.props.fetchNbaOdds();
+    this.props.fetchNflOdds();
   }
 
   render() {
@@ -28,6 +31,7 @@ class OddsContainer extends React.Component {
         <Container fluid>
           <MlbOdds mlbodds={this.props.mlbodds} />
           <NbaOdds nbaodds={this.props.nbaodds} />
+          <NflOdds nflodds={this.props.nflodds} />
         </Container>
       );
     }
@@ -38,7 +42,8 @@ const mapStateToProps = (state) => {
   return {
     mlbodds: state.mlbodds,
     nbaodds: state.nbaodds,
+    nflodds: state.nflodds,
   };
 };
 
-export default connect(mapStateToProps, { fetchMlbOdds, fetchNbaOdds })(OddsContainer);
+export default connect(mapStateToProps, { fetchMlbOdds, fetchNbaOdds, fetchNflOdds })(OddsContainer);
