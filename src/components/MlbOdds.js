@@ -14,10 +14,9 @@ import Moment from "react-moment";
 import teamPictures from "../data/pictures";
 
 const MlbOdds = (props) => {
-  return (
-    <div>
-      <h1>MLB Odds</h1>
-      <Container>
+  return (    
+    <Container fluid style={{margin: "20px"}}>
+    <h1>MLB Odds</h1>
         <CardColumns>
           {props.mlbodds &&
             props.mlbodds.map((mlbGame) => {
@@ -92,7 +91,6 @@ const MlbOdds = (props) => {
             })}
         </CardColumns>
       </Container>
-    </div>
   );
 };
 

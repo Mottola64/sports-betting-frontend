@@ -5,6 +5,7 @@ import { fetchNbaOdds } from '../actions/fetchNbaOdds';
 import LoadingSpinner from "../components/LoadingSpinner";
 import MlbOdds from '../components/MlbOdds'
 import NbaOdds from '../components/NbaOdds'
+import {Container} from 'reactstrap'
 
 class OddsContainer extends React.Component {
   componentDidMount() {
@@ -24,10 +25,10 @@ class OddsContainer extends React.Component {
       );
     } else {
       return (
-        <div style={{marginTop: "20px"}} >
+        <Container fluid>
           <MlbOdds mlbodds={this.props.mlbodds} />
           <NbaOdds nbaodds={this.props.nbaodds} />
-        </div>
+        </Container>
       );
     }
   }

@@ -15,6 +15,7 @@ import nbaschedule from "./reducers/nbaschedule";
 import nbaresults from "./reducers/nbaresults";
 import mlbodds from "./reducers/mlbodds";
 import nbaodds from "./reducers/nbaodds";
+import nflodds from './reducers/nflodds';
 import "./App.css";
 import DailyScheduleContainer from "./containers/DailyScheduleContainer";
 import BettingCalculator from "./components/BettingCalculator";
@@ -32,6 +33,7 @@ const reducer = combineReducers({
   nbaresults,
   mlbodds,
   nbaodds,
+  nflodds,
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

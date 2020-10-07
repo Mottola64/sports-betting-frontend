@@ -15,9 +15,8 @@ import nbaLogos from "../data/nbaLogos";
 
 const NbaOdds = (props) => {
   return (
-    <div>
+    <Container fluid style={{margin: "20px"}}>
       <h1>NBA Odds</h1>
-      <Container fluid>
 
       <CardColumns>
         {props.nbaodds.map((nbaGame) => {
@@ -55,12 +54,16 @@ const NbaOdds = (props) => {
                   />
                 </CardSubtitle>
                 <Button id="toggler">Odds</Button>
-                <UncontrolledCollapse toggler={"toggler"} style={{marginTop: "10px"}}>
+                <UncontrolledCollapse
+                  toggler={"toggler"}
+                  style={{ marginTop: "10px" }}
+                >
                   {nbaGame.sites
                     .filter(
                       (betsite) =>
                         betsite.site_nice === "FanDuel" ||
-                        betsite.site_nice === "DraftKings" || betsite.site_nice === "PointsBet (US)"
+                        betsite.site_nice === "DraftKings" ||
+                        betsite.site_nice === "PointsBet (US)"
                     )
                     .map((site) => {
                       return (
@@ -81,8 +84,7 @@ const NbaOdds = (props) => {
           );
         })}
       </CardColumns>
-      </Container>
-    </div>
+    </Container>
   );
 };
 
