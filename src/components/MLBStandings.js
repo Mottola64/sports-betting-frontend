@@ -3,7 +3,6 @@ import { MLBTable } from "./MLBTable";
 import {MLBTableMobile} from './MLBTableMobile';
 import Breakpoint from "react-socks";
 import "../index.css";
-import "../mlbStandings.css";
 
 const MLBStandings = (props) => {
   let sortedTeams = {};

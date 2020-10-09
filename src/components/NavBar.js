@@ -9,22 +9,19 @@ class NavBar extends React.Component {
 
         <Nav className="mr-auto " navbar>
           <NavItem>
-            <NavLink to="/news">News</NavLink>
+            <NavLink href="/news">News</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink to="/odds">Odds</NavLink>
+            <NavLink href="/nfl">NFL</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink to="/nfl">NFL</NavLink>
+            <NavLink href="/mlb">MLB</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink to="/mlb">MLB</NavLink>
+            <NavLink href="/nba">NBA</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink to="/nba">NBA</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to="/mlbstandings">MLB Standings</NavLink>
+            <NavLink href="/mlbstandings">MLB Standings</NavLink>
           </NavItem>
         </Nav>
       </Navbar>
