@@ -45,7 +45,7 @@ class BettingCalculator extends React.Component {
           <h4>Convert Decimal To Moneyline Odds</h4>
           <form onSubmit={this.handleSubmitMoneyline.bind(this)}>
             <input
-              type="number"
+              type="float"
               value={this.state.valueDecimal}
               placeholder="Decimal"
               onChange={this.handleChangeDecimal}

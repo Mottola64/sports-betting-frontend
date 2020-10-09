@@ -1,18 +1,17 @@
 import React from "react";
-import DailySchedule from "../components/DailySchedule";
+import MlbOdds from "../components/MlbOdds";
 import { connect } from "react-redux";
-import { fetchDailySchedule } from "../actions/fetchDailySchedule";
 import { fetchMlbOdds } from "../actions/fetchMlbOdds";
 import LoadingSpinner from "../components/LoadingSpinner";
 
-class DailyScheduleContainer extends React.Component {
+
+class MlbContainer extends React.Component {
   componentDidMount() {
-    this.props.fetchDailySchedule();
     this.props.fetchMlbOdds();
   }
 
   render() {
-    if (this.props.dailyschedule.length === 0) {
+    if (this.props.mlbodds.length === 0) {
       return (
         <div
           className="justify-content-center d-flex"
@@ -24,10 +23,7 @@ class DailyScheduleContainer extends React.Component {
     } else {
       return (
         <div>
-          <DailySchedule
-            dailyschedule={this.props.dailyschedule}
-            mlbodds={this.props.mlbodds}
-          />
+          <MlbOdds mlbodds={this.props.mlbodds} />
         </div>
       );
     }
@@ -36,11 +32,10 @@ class DailyScheduleContainer extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    dailyschedule: state.dailyschedule,
     mlbodds: state.mlbodds,
   };
 };
 
-export default connect(mapStateToProps, { fetchDailySchedule, fetchMlbOdds })(
-  DailyScheduleContainer
+export default connect(mapStateToProps, { fetchMlbOdds })(
+  MlbContainer
 );
