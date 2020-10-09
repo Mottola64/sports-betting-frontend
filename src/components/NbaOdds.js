@@ -15,7 +15,7 @@ import nbaLogos from "../data/nbaLogos";
 
 const NbaOdds = (props) => {
   return (
-    <Container fluid style={{margin: "20px"}}>
+    <Container fluid style={{ margin: "20px" }}>
       <h1>NBA Odds</h1>
 
       <CardColumns>
@@ -30,9 +30,17 @@ const NbaOdds = (props) => {
                 </CardHeader>
                 <br></br>
                 <CardSubtitle>
-                  <Moment unix format="MM/DD/YY">
-                    {nbaGame.commence_time}
-                  </Moment>
+                  <strong>
+                    <Moment unix format="MM/DD/YY">
+                      {nbaGame.commence_time}
+                    </Moment>
+                  </strong>
+                  <br></br>
+                  <strong>
+                    <Moment unix format="LT">
+                      {nbaGame.commence_time}
+                    </Moment>
+                  </strong>
                 </CardSubtitle>
                 <br></br>
                 <CardSubtitle>
@@ -43,7 +51,8 @@ const NbaOdds = (props) => {
                       height: "30%",
                     }}
                     alt="Card image cap"
-                  />{" "}
+                  />
+                  {" @ "}
                   <CardImg
                     src={nbaLogos[nbaGame.teams[1]]}
                     style={{
