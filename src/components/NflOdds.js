@@ -54,7 +54,7 @@ const NflOdds = (props) => {
                   />
                 </CardSubtitle>
                 <Button id={nflGame.home_team.replaceAll(" ", "_")}>Odds</Button>
-                {/* <UncontrolledCollapse
+                <UncontrolledCollapse
                   toggler={`${nflGame.home_team.replaceAll(" ", "_")}`}
                   style={{ marginTop: "10px" }}
                 >
@@ -70,15 +70,15 @@ const NflOdds = (props) => {
                         <p key={site.site_nice}>
                           {site.site_nice}
                           <li>
-                            {nflGame.teams[0]}: {site.odds.h2h[0]}
+                            {nflGame.teams[0]}: {site.odds.spreads.points[0]} {site.odds.spreads.odds[0]}
                           </li>
                           <li>
-                            {nflGame.teams[1]}: {site.odds.h2h[1]}
+                            {nflGame.teams[1]}: {site.odds.spreads.points[1]} {site.odds.spreads.odds[1]}
                           </li>
                         </p>
                       );
                     })}
-                </UncontrolledCollapse> */}
+                </UncontrolledCollapse>
               </CardBody>
             </Card>
           );
