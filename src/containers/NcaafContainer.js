@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { fetchNcaafOdds } from "../actions/fetchNcaafOdds";
 import LoadingSpinner from "../components/LoadingSpinner";
 
-
 class NcaafContainer extends React.Component {
   componentDidMount() {
     this.props.fetchNcaafOdds();
@@ -36,6 +35,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { fetchNcaafOdds })(
-  NcaafContainer
-);
+export default connect(mapStateToProps, { fetchNcaafOdds })(NcaafContainer);
