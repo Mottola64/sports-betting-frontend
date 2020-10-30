@@ -21,6 +21,9 @@ class NavBar extends React.Component {
             <NavLink href="/nba">NBA</NavLink>
           </NavItem>
           <NavItem>
+            <NavLink href="/ncaaf">NCAAF</NavLink>
+          </NavItem>
+          <NavItem>
             <NavLink href="/mlbstandings">MLB Standings</NavLink>
           </NavItem>
         </Nav>

@@ -13,12 +13,14 @@ import nbaresults from "./reducers/nbaresults";
 import mlbodds from "./reducers/mlbodds";
 import nbaodds from "./reducers/nbaodds";
 import nflodds from "./reducers/nflodds";
+import ncaafodds from "./reducers/ncaafodds";
 import "./App.css";
 import MlbContainer from "./containers/MlbContainer";
 import MLBStandingsContainer from "./containers/MLBStandingsContainer";
 import NbaContainer from "./containers/NbaContainer";
 import NflContainer from "./containers/NflContainer";
 import { BreakpointProvider } from "react-socks";
+import NcaafContainer from "./containers/NcaafContainer";
 
 const reducer = combineReducers({
   sportsnews,
@@ -27,6 +29,7 @@ const reducer = combineReducers({
   mlbodds,
   nbaodds,
   nflodds,
+  ncaafodds,
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -50,6 +53,7 @@ class App extends React.Component {
                 <Route path="/mlbstandings" component={MLBStandingsContainer} />
                 <Route path="/nba" component={NbaContainer} />
                 <Route path="/nfl" component={NflContainer} />
+                <Route path="/ncaaf" component={NcaafContainer}/>
                 <Route exact path="/" component={Home} />
               </Switch>
             </Router>
