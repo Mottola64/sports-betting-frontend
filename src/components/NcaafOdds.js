@@ -4,27 +4,31 @@ import Moment from "react-moment";
 
 const NcaafOdds = (props) => {
   return (
-    <Container>
+    <Container fluid>
       <h1>NCAAF Odds</h1>
       {props.ncaafodds &&
         props.ncaafodds.map((ncaafGame) => {
           return (
-            <Table key={ncaafGame.teams[1]}>
+            <Table
+              bordered
+              hover
+              key={ncaafGame.home_team}
+              style={{ margin: "20px" }}
+            >
               <tbody>
                 <tr>
-                  <td>
+                  <th colSpan="3">
                     {ncaafGame.teams[0]} @ {ncaafGame.teams[1]}
-                  </td>
-                  <td>
-                    <Moment unix format="MM/DD/YY">
-                      {ncaafGame.commence_time}
-                    </Moment>
-                  </td>
-                  <td>
-                    <Moment unix format="LT">
-                      {ncaafGame.commence_time}
-                    </Moment>
-                  </td>
+                  </th>
+                </tr>
+                <tr colSpan="3">
+                  <Moment unix format="MM/DD/YY">
+                    {ncaafGame.commence_time}
+                  </Moment>
+                  :
+                  <Moment unix format="LT">
+                    {ncaafGame.commence_time}
+                  </Moment>
                 </tr>
               </tbody>
               <tbody>
@@ -38,25 +42,23 @@ const NcaafOdds = (props) => {
                     )
                     .map((site) => {
                       return (
-                        <>
-                          <tbody>
-                            <tr key={site.site_nice}>
-                              <td>{site.site_nice}</td>
-                              <td>Spread</td>
-                              <td>Odds</td>
-                            </tr>
-                            <tr>
-                              <td>{ncaafGame.teams[0]}</td>
-                              <td>{site.odds.spreads.points[0]}</td>
-                              <td>{site.odds.spreads.odds[0]}</td>
-                            </tr>
-                            <tr>
-                              <td>{ncaafGame.teams[1]}</td>
-                              <td>{site.odds.spreads.points[1]}</td>
-                              <td>{site.odds.spreads.odds[1]}</td>
-                            </tr>
-                          </tbody>
-                        </>
+                        <React.Fragment key={site.site_nice}>
+                          <tr>
+                            <td>{site.site_nice}</td>
+                            <td>Spread</td>
+                            <td>Odds</td>
+                          </tr>
+                          <tr>
+                            <td>{ncaafGame.teams[0]}</td>
+                            <td>{site.odds.spreads.points[0]}</td>
+                            <td>{site.odds.spreads.odds[0]}</td>
+                          </tr>
+                          <tr>
+                            <td>{ncaafGame.teams[1]}</td>
+                            <td>{site.odds.spreads.points[1]}</td>
+                            <td>{site.odds.spreads.odds[1]}</td>
+                          </tr>
+                        </React.Fragment>
                       );
                     })}
               </tbody>
