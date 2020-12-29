@@ -43,7 +43,7 @@ const NcaabOdds = (props) => {
                   </strong>
                 </CardSubtitle>
                 <br></br>
-                <CardSubtitle>
+                {/* <CardSubtitle>
                   <CardImg
                     src={nbaLogos[ncaabGame.teams[0]]}
                     style={{
@@ -61,7 +61,7 @@ const NcaabOdds = (props) => {
                     }}
                     alt="Card image cap"
                   />
-                </CardSubtitle>
+                </CardSubtitle> */}
                 <Button id="toggler">Odds</Button>
                 <UncontrolledCollapse
                   toggler={"toggler"}
