@@ -79,11 +79,15 @@ const NbaOdds = (props) => {
                         <p key={site.site_nice}>
                           {site.site_nice}
                           <li>
-                            {nbaGame.teams[0]}: {site.odds.h2h[0]}
-                          </li>
-                          <li>
-                            {nbaGame.teams[1]}: {site.odds.h2h[1]}
-                          </li>
+                                {nbaGame.teams[0]}:{" "}
+                                {site.odds.spreads.points[0]}{" "}
+                                {site.odds.spreads.odds[0]}
+                              </li>
+                              <li>
+                                {nbaGame.teams[1]}:{" "}
+                                {site.odds.spreads.points[1]}{" "}
+                                {site.odds.spreads.odds[1]}
+                              </li>
                         </p>
                       );
                     })}

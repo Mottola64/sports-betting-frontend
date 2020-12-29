@@ -7,7 +7,7 @@ import LoadingSpinner from "../components/LoadingSpinner";
 
 class NbaContainer extends React.Component {
   componentDidMount() {
-    this.props.fetchNflOdds();
+    this.props.fetchNbaOdds();
   }
 
   render() {

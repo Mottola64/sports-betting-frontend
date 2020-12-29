@@ -43,7 +43,7 @@ const nflLogos = {
 'Dallas Cowboys': cowboys,
 'Denver Broncos': broncos,
 'Detroit Lions': lions,
-'Greenbay Packers': packers,
+'Green Bay Packers': packers,
 'Houston Texans': texans,
 'Indianapolis Colts': colts,
 'Jacksonville Jaguars': jaguars,
