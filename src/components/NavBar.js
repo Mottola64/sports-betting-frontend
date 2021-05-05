@@ -11,21 +11,21 @@ class NavBar extends React.Component {
           <NavItem>
             <NavLink href="/news">News</NavLink>
           </NavItem>
-          <NavItem>
+          {/* <NavItem>
             <NavLink href="/nfl">NFL</NavLink>
-          </NavItem>
+          </NavItem> */}
           <NavItem>
             <NavLink href="/mlb">MLB</NavLink>
           </NavItem>
           <NavItem>
             <NavLink href="/nba">NBA</NavLink>
           </NavItem>
-          <NavItem>
+          {/* <NavItem>
             <NavLink href="/ncaab">NCAAB</NavLink>
           </NavItem>
           <NavItem>
             <NavLink href="/ncaaf">NCAAF</NavLink>
-          </NavItem>
+          </NavItem> */}
           <NavItem>
             <NavLink href="/mlbstandings">MLB Standings</NavLink>
           </NavItem>

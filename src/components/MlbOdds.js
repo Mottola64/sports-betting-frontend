@@ -15,7 +15,7 @@ import teamPictures from "../data/pictures";
 
 const MlbOdds = (props) => {
   return (
-    <Container fluid style={{ margin: "20px" }}>
+    <Container style={{marginTop: "20px"}}fluid>
       <h1>MLB Odds</h1>
       <CardColumns>
         {props.mlbodds &&
@@ -23,11 +23,12 @@ const MlbOdds = (props) => {
             return (
               <Card key={mlbGame.teams[0]}>
                 <CardBody>
-                  <CardHeader
+                  {/* <CardHeader
                     className="text-center"
                     width="100%"
                     margin="10px"
-                  >
+                  > */}
+                  <CardHeader as="h5">
                     <strong>
                       {mlbGame.teams[0]} @ {mlbGame.teams[1]}
                     </strong>

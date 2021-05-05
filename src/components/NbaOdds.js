@@ -15,7 +15,7 @@ import nbaLogos from "../data/nbaLogos";
 
 const NbaOdds = (props) => {
   return (
-    <Container fluid style={{ margin: "20px" }}>
+    <Container style={{marginTop: "20px"}}fluid>
       <h1>NBA Odds</h1>
 
       <CardColumns>
@@ -23,7 +23,8 @@ const NbaOdds = (props) => {
           return (
             <Card key={nbaGame.teams[0]}>
               <CardBody>
-                <CardHeader className="text-center" width="95%" margin="10px">
+                {/* <CardHeader className="text-center" width="95%" margin="10px"> */}
+                <CardHeader as="h5">
                   <strong>
                     {nbaGame.teams[0]} @ {nbaGame.teams[1]}
                   </strong>
@@ -62,9 +63,9 @@ const NbaOdds = (props) => {
                     alt="Card image cap"
                   />
                 </CardSubtitle>
-                <Button id="toggler">Odds</Button>
+                <Button id={`${nbaGame.home_team.replaceAll(" ", "_")}`}>Odds</Button>
                 <UncontrolledCollapse
-                  toggler={"toggler"}
+                  toggler={`${nbaGame.home_team.replaceAll(" ", "_")}`}
                   style={{ marginTop: "10px" }}
                 >
                   {nbaGame.sites
