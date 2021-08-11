@@ -8,12 +8,12 @@ const Home = () => {
     <div>
       <Jumbotron
         fluid
-        style={{
-          border: "3px",
-          borderColor: "#00b541",
-          backgroundColor: "#242424",
-          color: "#00b541",
-        }}
+        // style={{
+        //   border: "3px",
+        //   borderColor: "#00b541",
+        //   backgroundColor: "#242424",
+        //   color: "#00b541",
+        // }}
         className="Jumbotron"
       >
         <Container fluid>
