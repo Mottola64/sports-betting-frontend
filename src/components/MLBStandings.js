@@ -18,7 +18,7 @@ const MLBStandings = (props) => {
   return (
     <>
     <Breakpoint medium up>
-      <div style={{ marginTop: "25px" }}>
+      <div className="px-4 mt-4">
         <h1>MLB Standings</h1>
 
         {Object.keys(sortedTeams).filter((group => (group !== "American League") && (group !== "National League"))).map((group) => (

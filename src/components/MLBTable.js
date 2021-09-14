@@ -7,42 +7,60 @@ export const MLBTable = (props) => {
   const [teams] = useState(props.teams);
   
   return (
-    <>
+  
+    <div className="flex flex-col">
+    <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+        <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
     <h3><strong>{group}</strong></h3>
-    <table className="table-auto">
-  <thead>
+    <table className="min-w-full divide-y divide-gray-200">
+  <thead className="min-w-full divide-y divide-gray-200">
     <tr>
-      <th>Team</th>
-      <th>Wins</th>
-      <th>Losses</th>
-      <th>Win Percentage</th>
-      <th>Last 5</th>
+      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"></th>
+      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Team</th>
+      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Wins</th>
+      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Losses</th>
+      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Win Percentage</th>
+      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Last 5</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="bg-white divide-y divide-gray-200">
           {teams.map((team) => (
             <tr key={team.team.name}>
-              <td>
-                <img
-                  class="w-1/2 h-1/2 max-w-xs max-h-xs"
-                  src={teamPictures[team.team.name]}
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div className="px-6 py-4 whitespace-nowrap">
+                  <div className="flex items-center">
+                      <div className="flex-shrink-0 h-20  w-20">
 
-                  alt=""
-                />
+                      <img
+                        className="h-20 w-20"
+                        src={teamPictures[team.team.name]}
+
+                        alt=""
+                      />
+                      </div>
+                      </div>
+                  
+                </div>
+                
               </td>
-              <td className="font-bold" key={team.team.name}>
+              <td className="px-6 py-4 whitespace-nowrap" key={team.team.name}>
                 {team.team.name}
               </td>
 
-              <td>{team.games.win.total}</td>
-              <td>{team.games.lose.total}</td>
-              <td>{team.games.win.percentage}</td>
-              <td>{team.form}</td>
+              <td className="px-6 py-4 whitespace-nowrap" >{team.games.win.total}</td>
+              <td className="px-6 py-4 whitespace-nowrap" >{team.games.lose.total}</td>
+              <td className="px-6 py-4 whitespace-nowrap" >{team.games.win.percentage}</td>
+              <td className="px-6 py-4 whitespace-nowrap" >{team.form}</td>
             </tr>
           ))}
         </tbody>
 </table>
-</>
+</div>
+</div>
+</div>
+</div>
+
   )
 }
             
