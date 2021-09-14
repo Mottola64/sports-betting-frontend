@@ -45,8 +45,9 @@ let myStore = createStore(
 class App extends React.Component {
   render() {
     return (
-      <BreakpointProvider>
-        <div className="App">
+      <main className="text-gray-400 bg-gray-900 body-font">
+        <BreakpointProvider>
+        <div>
           <Provider store={myStore}>
             <Router>
               <NavBar />
@@ -57,13 +58,14 @@ class App extends React.Component {
                 <Route path="/nba" component={NbaContainer} />
                 <Route path="/nfl" component={NflContainer} />
                 <Route path="/ncaaf" component={NcaafContainer}/>
-                <Route path="/ncaab" component={NcaabContainer}/>
+                {/* <Route path="/ncaab" component={NcaabContainer}/> */}
                 <Route exact path="/" component={Home} />
               </Switch>
             </Router>
           </Provider>
         </div>
       </BreakpointProvider>
+        </main>
     );
   }
 }

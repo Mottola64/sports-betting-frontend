@@ -22,7 +22,7 @@ const MLBStandings = (props) => {
         <h1>MLB Standings</h1>
 
         {Object.keys(sortedTeams).filter((group => (group !== "American League") && (group !== "National League"))).map((group) => (
-          <MLBTable group={group} teams={sortedTeams[group]} key={group} />
+          <MLBTable className="p-1 m-1" group={group} teams={sortedTeams[group]} key={group} />
         ))}
       </div>
     </Breakpoint>

@@ -9,7 +9,7 @@ export const MLBTable = (props) => {
   return (
     <>
     <h3><strong>{group}</strong></h3>
-    <table class="table-auto">
+    <table className="table-auto">
   <thead>
     <tr>
       <th>Team</th>
@@ -24,14 +24,14 @@ export const MLBTable = (props) => {
             <tr key={team.team.name}>
               <td>
                 <img
-                  class="max-w-xs max-h-xs"
+                  class="w-1/2 h-1/2 max-w-xs max-h-xs"
                   src={teamPictures[team.team.name]}
 
                   alt=""
                 />
               </td>
-              <td key={team.team.name}>
-                <strong>{team.team.name}</strong>
+              <td className="font-bold" key={team.team.name}>
+                {team.team.name}
               </td>
 
               <td>{team.games.win.total}</td>

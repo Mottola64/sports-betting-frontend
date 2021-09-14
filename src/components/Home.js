@@ -6,18 +6,12 @@ import "../index.css";
 const Home = () => {
   return (
     <div>
-      <Jumbotron
+      <header
         fluid
-        // style={{
-        //   border: "3px",
-        //   borderColor: "#00b541",
-        //   backgroundColor: "#242424",
-        //   color: "#00b541",
-        // }}
-        className="Jumbotron"
+        
       >
-        <Container fluid>
-          <h1 className="display-3">
+        <div className="container mx-auto" fluid>
+          <h1>
             <strong>The Underdog</strong>
           </h1>
           <p className="lead">
@@ -26,8 +20,8 @@ const Home = () => {
               Heavy Favorite. We Only Ride With The Biggest Dogs
             </strong>
           </p>
-        </Container>
-      </Jumbotron>
+        </div>
+      </header>
 
       <NewsContainer />
     </div>
