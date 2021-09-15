@@ -10,11 +10,11 @@ const Home = () => {
         fluid
         
       >
-        <div className="container mx-auto" fluid>
+        <div className="sm:text-xs md:text-sm lg:text-lg text-green-500 container mx-auto m-2" fluid>
           <h1>
             <strong>The Underdog</strong>
           </h1>
-          <p className="lead">
+          <p>
             <strong>
               Welcome To The Underdog. Here At The Underdog, We NEVER Bet On The
               Heavy Favorite. We Only Ride With The Biggest Dogs

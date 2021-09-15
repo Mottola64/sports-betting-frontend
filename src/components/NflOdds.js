@@ -15,7 +15,7 @@ import nflLogos from "../data/nflLogos";
 
 const NflOdds = (props) => {
   return (
-    <Container fluid style={{ margin: "20px" }}>
+    <div fluid style={{ margin: "20px" }}>
       <h1>NFL Odds</h1>
 
       <CardColumns>
@@ -24,27 +24,21 @@ const NflOdds = (props) => {
             return (
               <Card key={nflGame.teams[0]}>
                 <CardBody>
-                  <CardHeader className="text-center" width="95%" margin="10px">
-                    <strong>
+                  <header className="text-center font-extrabold" width="95%" margin="10px">
+                    
                       {nflGame.teams[0]} @ {nflGame.teams[1]}
-                    </strong>
-                  </CardHeader>
+                    
+                  </header>
                   <br></br>
-                  <CardSubtitle>
-                    <strong>
-                      <Moment unix format="MM/DD/YY">
+                  <div className="text-center mb-1">
+                    
+                      <Moment unix format="MM/DD/YY  LT">
                         {nflGame.commence_time}
                       </Moment>
-                    </strong><br></br>
-                    <strong>
-                      <Moment unix format="LT">
-                        {nflGame.commence_time}
-                      </Moment>
-                    </strong>
-                  </CardSubtitle>
-                  <br></br>
-                  <CardSubtitle>
-                    <CardImg
+                  
+                  </div>
+                 <div className="flex justify-center items-center">
+                    <img className=""
                       src={nflLogos[nflGame.teams[0]]}
                       style={{
                         width: "30%",
@@ -53,7 +47,7 @@ const NflOdds = (props) => {
                       alt="Card image cap"
                     />
                     {" @ "}
-                    <CardImg
+                    <img
                       src={nflLogos[nflGame.teams[1]]}
                       style={{
                         width: "30%",
@@ -61,7 +55,7 @@ const NflOdds = (props) => {
                       }}
                       alt="Card image cap"
                     />
-                  </CardSubtitle>
+                  </div> 
                   <Button id={nflGame.home_team.replaceAll(" ", "_")}>
                     Odds
                   </Button>
@@ -100,7 +94,7 @@ const NflOdds = (props) => {
             );
           })}
       </CardColumns>
-    </Container>
+    </div>
   );
 };
 
