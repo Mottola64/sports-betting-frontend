@@ -34,7 +34,7 @@ class News extends React.Component {
                       src={article.urlToImage}
                       alt={article.title}
                     />
-                  ) : <img class="mt-1 w-full rounded shadow-lg" src={teamPictures["logo"]}/>}
+                  ) : <img class="mt-1 w-full rounded shadow-lg" src={teamPictures["logo"]} alt="logo"/>}
                   
                   <button class="justify-self-center items-stretch mt-3 bg-green-500 hover:bg-gray-700 text-white font-bold py-2 px-3 rounded"
                     variant="primary"

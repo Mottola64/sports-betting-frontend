@@ -1,5 +1,4 @@
 import React from "react";
-import { Jumbotron, Container } from "reactstrap";
 import NewsContainer from "../containers/NewsContainer";
 import "../index.css";
 

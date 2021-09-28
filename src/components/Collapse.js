@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Collapse = ({ nflGame }) => {
+const Collapse = ({ game }) => {
   const [isActive, setIsActive] = useState(false);
 
   return (
@@ -8,10 +8,10 @@ const Collapse = ({ nflGame }) => {
       <div className="accordion-title" onClick={() => setIsActive(!isActive)}>
         <div>{isActive ? '-' : '+'}</div>
       </div>
-      <div class={nflGame.home_team.replaceAll(" ", "_")}>
+      <div class={game.home_team.replaceAll(" ", "_")}>
                         </div>
-                    {isActive && <div class={nflGame.home_team.replaceAll(" ", "_")}> {nflGame.sites &&
-                      nflGame.sites
+                    {isActive && <div class={game.home_team.replaceAll(" ", "_")}> {game.sites &&
+                      game.sites
                         .filter(
                           (betsite) =>
                             betsite.site_nice === "FanDuel" ||
@@ -20,19 +20,29 @@ const Collapse = ({ nflGame }) => {
                         )
                         .map((site) => {
                           return (
+                             <> {site.odds.spreads ?
                             <p key={site.site_nice}>
                               {site.site_nice}
                               <li>
-                                {nflGame.teams[0]}:{" "}
+                                {game.teams[0]}:{" "}
                                 {site.odds.spreads.points[0]}{" "}
                                 {site.odds.spreads.odds[0]}
                               </li>
                               <li>
-                                {nflGame.teams[1]}:{" "}
+                                {game.teams[1]}:{" "}
                                 {site.odds.spreads.points[1]}{" "}
                                 {site.odds.spreads.odds[1]}
                               </li>
-                            </p>
+                            </p> : <p key={site.site_nice}>
+                            {site.site_nice}
+                            <li>
+                              {game.teams[0]}: {site.odds.h2h[0]}
+                            </li>
+                            <li>
+                              {game.teams[1]}: {site.odds.h2h[1]}
+                            </li>
+                          </p>}
+                            </>
                           );
                         })}</div>}
                   </div>

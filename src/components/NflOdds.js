@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Moment from "react-moment";
 import nflLogos from "../data/nflLogos";
 import Collapse from '../components/Collapse'
 
 const NflOdds = (props) => {
-  const [isActive, setIsActive] = useState(false);
-
-  
+ 
   return (
     <div class="mx-auto">
       <h1>NFL Odds</h1>
@@ -35,7 +33,7 @@ const NflOdds = (props) => {
                         width: "30%",
                         height: "30%",
                       }}
-                      alt="Card image cap"
+                      alt="team logo"
                     />
                     {" @ "}
                     <img
@@ -44,11 +42,11 @@ const NflOdds = (props) => {
                         width: "30%",
                         height: "30%",
                       }}
-                      alt="Card image cap"
+                      alt="team logo"
                     />
                   </div> 
                   
-                    <Collapse nflGame={nflGame}/>
+                    <Collapse game={nflGame}/>
                 </div>
               </div>
             );
