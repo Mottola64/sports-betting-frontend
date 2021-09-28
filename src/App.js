@@ -45,7 +45,7 @@ let myStore = createStore(
 class App extends React.Component {
   render() {
     return (
-      <main className="text-gray-400 bg-gray-900 body-font">
+      <main class="text-gray-400 bg-gray-900 body-font">
         <BreakpointProvider>
         <div>
           <Provider store={myStore}>

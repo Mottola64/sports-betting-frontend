@@ -14,7 +14,7 @@ class NflContainer extends React.Component {
     if (this.props.nflodds.length === 0) {
       return (
         <div
-          className="justify-content-center d-flex"
+          class="justify-content-center d-flex"
           style={{ backgroundColor: "white" }}
         >
           <LoadingSpinner />
