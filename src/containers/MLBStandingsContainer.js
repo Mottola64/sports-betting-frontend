@@ -1,7 +1,7 @@
 import React from "react";
 import MLBStandings from "../components/MLBStandings";
 import { connect } from "react-redux";
-import { fetchMlbStandings } from "../actions/fetchMlbStandings";
+import { fetchMlbStandings } from "../../netlify/functions/actions/fetchMlbStandings";
 import LoadingSpinner from "../components/LoadingSpinner";
 import {Container} from 'reactstrap'
 

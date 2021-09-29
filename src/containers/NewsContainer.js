@@ -1,7 +1,7 @@
 import React from "react";
 import News from "../components/News";
 import { connect } from "react-redux";
-import { fetchSportsNews } from "../actions/fetchSportsNews";
+import { fetchSportsNews } from "../../netlify/functions/actions/fetchSportsNews";
 import LoadingSpinner from "../components/LoadingSpinner";
 
 class NewsContainer extends React.Component {
