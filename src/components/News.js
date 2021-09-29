@@ -18,7 +18,7 @@ class News extends React.Component {
 
   render() {
     return (
-      <div class="mx-auto bg-gray-600">
+      <div class="mx-auto">
         <div class="gap-x-2 sm:grid-cols-1 grid md:grid-cols-3 lg:grid-cols-4">
           {this.props.sportsnews.map((article) => {
             return (
