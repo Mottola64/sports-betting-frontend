@@ -3,7 +3,6 @@ import {
   Button,
   Card,
   CardHeader,
-  CardImg,
   CardColumns,
   CardSubtitle,
   CardBody,
@@ -11,7 +10,7 @@ import {
   UncontrolledCollapse,
 } from "reactstrap";
 import Moment from "react-moment";
-import nbaLogos from "../data/nbaLogos";
+
 
 const NcaabOdds = (props) => {
   return (
