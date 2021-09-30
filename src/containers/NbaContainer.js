@@ -1,7 +1,7 @@
 import React from "react";
 import NbaOdds from "../components/NbaOdds";
 import { connect } from "react-redux";
-import { fetchNbaOdds } from "../../netlify/functions/actions/fetchNbaOdds";
+import { fetchNbaOdds } from "../actions/fetchNbaOdds";
 import LoadingSpinner from "../components/LoadingSpinner";
 
 

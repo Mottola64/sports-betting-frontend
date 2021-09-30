@@ -6,7 +6,7 @@ export function fetchMlbStandings() {
         method: "GET",
         headers: {
           "x-rapidapi-host": "api-baseball.p.rapidapi.com",
-          "x-rapidapi-key": `${process.env.REACT_APP_DAILYSCHEDULE_API_KEY}`,
+          "x-rapidapi-key": `${process.env.DAILYSCHEDULE_API_KEY}`,
         },
       }
     )

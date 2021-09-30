@@ -4,7 +4,7 @@ export function fetchNbaResults() {
         method: "GET",
         headers: {
           "x-rapidapi-host": "thesportsdb.p.rapidapi.com",
-          "x-rapidapi-key": `${process.env.REACT_APP_SPORTSDB_API_KEY}`,
+          "x-rapidapi-key": `${process.env.SPORTSDB_API_KEY}`,
         },
       })
         .then((response) => response.json())

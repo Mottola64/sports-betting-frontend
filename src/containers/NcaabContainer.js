@@ -1,7 +1,7 @@
 import React from "react";
 import NcaabOdds from "../components/NcaabOdds";
 import { connect } from "react-redux";
-import { fetchNcaabOdds } from "../../netlify/functions/actions/fetchNcaabOdds";
+import { fetchNcaabOdds } from "../actions/fetchNcaabOdds";
 import LoadingSpinner from "../components/LoadingSpinner";
 
 class NcaabContainer extends React.Component {

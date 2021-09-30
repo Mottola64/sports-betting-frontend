@@ -1,7 +1,7 @@
 import React from "react";
 import MlbOdds from "../components/MlbOdds";
 import { connect } from "react-redux";
-import { fetchMlbOdds } from "../../netlify/functions/actions/fetchMlbOdds";
+import { fetchMlbOdds } from "../actions/fetchMlbOdds";
 import LoadingSpinner from "../components/LoadingSpinner";
 
 
